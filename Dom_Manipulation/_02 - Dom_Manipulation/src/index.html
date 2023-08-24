@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dom Manupullation</title>
+</head>
+<body>
+<h1>Institute Of Software Engineering</h1>
+
+<h1 id="display">Institute Of Software Engineering</h1>
+<h2>GDSE</h2>
+<h3>Panadura & Galle</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dicta, dolor doloremque eius, est id in laboriosam laudantium numquam quibusdam tempora vero? Consectetur excepturi expedita incidunt molestias obcaecati odit saepe!</p>
+<hr>
+<input id="input" placeholder="Input Something" type="text">
+<button id="btn1">Test</button>
+<button id="btn2">Add</button>
+<button id="btn3">AddImg</button>
+<button id="btn4">AddList</button>
+<hr>
+
+<ul>
+    <li>GDSE</li>
+    <li>CMJD</li>
+    <li>DEP</li>
+</ul>
+
+<img id="image" src="" alt="" width="300px">
+
+<script>
+    document.getElementsByTagName("h1")[0].innerText="Hello JavaScript";
+    document.getElementsByTagName("h1")[0].style.fontSize="30px";
+
+    document.getElementsByTagName("h2")[0].innerText="IJSE";
+
+    document.getElementsByTagName("h3")[0].style.color="red";
+
+    document.getElementsByTagName("p")[0].style.backgroundColor="red";
+    document.getElementsByTagName("p")[0].style.color="white";
+
+    document.querySelector("Input").value="C001";
+
+
+    /*Remove value when click button*/
+    document.getElementById("btn1").addEventListener("click",function (){
+       // alert("Hello");
+
+        document.getElementsByTagName("h1")[1].remove();
+    });
+
+    /*Assign value when click button*/
+    document.getElementById("btn2").addEventListener("click",function (){
+        document.getElementById("display").innerText=document.getElementById("input").value;
+    });
+
+
+    /*Add Image when click button*/
+    document.getElementById("btn3").addEventListener("click",function (){
+        document.getElementById("image").setAttribute("src",document.getElementById("input").value);
+    });
+
+    /*change HTML*/
+    document.querySelector("ul").innerHTML;
+    document.querySelector("ul").innerHTML="<li>ABSD</li>"
+    document.querySelector("ul").innerHTML+="<li>ABSD</li> <li>CMJD</li> <li>DEP</li>"
+
+    document.getElementById("btn4").addEventListener("click",function (){
+        document.querySelector("ul").innerHTML+="<li>"+document.getElementById("input").value+"</li>";
+    });
+</script>
+</body>
+</html>

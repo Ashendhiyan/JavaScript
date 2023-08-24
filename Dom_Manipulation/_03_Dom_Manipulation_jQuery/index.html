@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+</head>
+<body>
+<h1>Hello jQuery..!</h1>
+<h2 id="titleTwo">Let's manipulate the DOM</h2>
+<h3 id="titleThree">absd</h3>
+<p class="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dicta, dolor doloremque eius, est id in laboriosam laudantium numquam quibusdam tempora vero? Consectetur excepturi expedita incidunt molestias obcaecati odit saepe!</p>
+<p class="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dicta, dolor doloremque eius, est id in laboriosam laudantium numquam quibusdam tempora vero? Consectetur excepturi expedita incidunt molestias obcaecati odit saepe!</p>
+<hr>
+<input id="input" placeholder="Input Something" type="text">
+<button id="btn1">Test</button>
+<button id="btn2">Add</button>
+<button id="btnUp">up</button>
+<button id="btnDown">down</button>
+<button id="addImg">Add Image</button>
+<hr>
+
+<ul id="list">
+    <li>GDSE</li>
+    <li>CMJD</li>
+    <li>DEP</li>
+</ul>
+
+<img id="image" src="" alt="" width="300px">
+
+
+<script src="assets/JQuery/jquery-3.6.1.min.js"></script>
+<script src="assets/js/my-scipt.js"></script>
+<script>
+
+   /* document.querySelector("h1").innerText="Hi";
+    document.getElementsByTagName("h1")[0].style.color="red";*/
+
+/*
+   $("h1").text("Hiii Lamaiii...");
+   $("#titleTwo").text("changed titleTwo..");*/
+
+
+   /*How to change the default selector symbol */
+     //   var RS = jQuery.noConflict();
+      //  $("h1").text("Changed..");  -- $ sign eka dn idan wda nh
+      //  RS("h1").text("Now Changed..");  // -- RS wlin thma access krnna oni
+
+/*
+
+/!*id selector*!/
+   $("#titleThree").css('color','green');
+
+
+/!*class selector*!/
+   $(".para").css('color','pink');
+
+
+/!*universal selector*!/
+   //console.log( $("*").text());
+
+
+/!*attribute selector*!/
+   //$("[id]").remove();
+
+
+   /!*attribute selector*!/
+   $("li:first-child").css('color','red');
+   $("li:last-child").css('color','red');
+   $("li:nth-child(2)").css('color','red');
+
+*/
+
+   /*What about css combinators*/
+
+   /*child combunators
+   decendent combunators
+    adjacent combunators
+   generel siblings combunators*/
+
+/*
+
+   /!*Child combinator*!/
+   $("body>ul>li").css('color','red');
+
+   //Decendant combination
+   $("body li").css('color','orange');
+
+   //adjacent combinators
+   $("h3+p").css('color','green');
+
+   //   general siblings combinators
+   $("h3~p").css('color','green');
+
+*/
+
+
+  /*
+
+  //selector grouping
+   $("h1,h2,h3").remove();
+
+*/
+
+
+   $("#btn1").click(function (){
+       $("h1").text("Kariya..");
+   });
+
+
+   $("#btn2").click(function (){
+       $("h2").text($("#input").val());
+   });
+
+
+   $("#btnUp").click(function (){
+       $("#list").prepend("<li>" +$('#input').val()+ "</li>");
+
+   });
+
+   $("#btnDown").click(function (){
+       $("#list").append("<li>" + $('#input').val() +"</li>")
+   });
+
+
+   /*Add Image when click button*/
+
+   $("#addImg").click(function (){
+       $("#image").attr("src",$("#input").val());
+   });
+
+
+</script>
+
+</body>
+</html>

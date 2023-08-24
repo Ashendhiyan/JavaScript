@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello JS</title>
+</head>
+<body>
+<h1>Hello jS</h1>
+
+<script>
+    <!--   we can write script here     -->
+    // document.getElementsByTagName()
+
+    /*print a output*/
+    //alert("hello");
+    // console.log("Hello JS - Im from internal Script ");
+
+
+    /*  strong type language
+
+      int i=10;
+      String name = "Hello there";
+
+  */
+
+    //what about js
+    //loosly type
+
+   // var cusName = "Dasun";
+
+
+    //then why is it dynamic typing..?
+
+    var customerId = "C001";
+   // undefined
+    customerId
+   // 'C001'
+    typeof customerId
+   // 'string'
+    customerId = true
+   // true
+    typeof customerId
+   // 'boolean'
+    customerId = 10;
+   // 10
+    customerId
+   // 10
+    typeof customerId
+   // 'number'
+
+
+    /*=========================================================================================*/
+
+    /* problems in var*/
+
+    // var cusName = "Dasun";
+    // var cusName = "Kamal";  // can duplicate identifiers
+    // console.log(cusName);   //kamal
+
+
+    {
+        // var cusAddress = "Galle";
+        // console.log("inside scope : "+cusAddress);
+        // console.log("inside scope : "+cusName);
+    }
+
+    // console.log("Outside scope : "+cusAddress); // no scope
+
+
+
+
+    /*=========================================================================================*/
+
+    /* let - declaration type like var */
+
+    {
+       // let cusId = "C001";
+      //  console.log( "inside : "+cusId);
+    }
+
+   // console.log("outside : "+cusId);  // let think about scopes
+
+
+    // let abc = 100;
+    // let abc = 200;         //cannot duplicate
+
+    /*=========================================================================================*/
+
+
+    /*const variables - read only values*/
+
+    //const CUSTOMER_ADDRESS; //no
+
+    /*const CUSTOMER = "ABCD";
+    console.log(CUSTOMER);*/
+
+
+    /*const A = 10;
+    const A = 10;   // cannot duplicate */
+
+    /*scope..*/
+    {
+       // const A = 10;
+    }
+   // console.log(A); // not working
+
+    /* dynamic typing */
+   /* const CUSTOMER_NAME = "DASUN";
+    typeof CUSTOMER_NAME;   // string
+
+
+    CUSTOMER_NAME = 10; // not working*/
+
+
+
+
+    /*=========================================================================================*/
+
+    /* case sensitive
+    * can we start a identifier from a number
+    * _ , $
+    *  */
+
+/*
+
+    var name = "Ashen";
+    var Name = "Kamal";
+    console.log(name);
+    console.log(Name);
+
+
+    let name = "Ashen";
+    let Name = "Kamal";
+    console.log(name);
+    console.log(Name);
+
+    //first letter should be  a-z or _or $
+    //we can use number after that
+    let 0myName = "Ashen";  //wrong
+    let my9Name = "Ashen";  //ok
+    let _my9Name = "Ashen"; //ok
+    let $my9Name = "Ashen"; //ok
+
+*/
+
+
+
+
+
+
+</script>
+<script src="assets/js/script.js"></script>
+</body>
+</html>
