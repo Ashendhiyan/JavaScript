@@ -6,197 +6,200 @@
 </head>
 <body>
 
-    <section id="mainSection">
-        <section id="subSection1">
-            <div id="div1">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aspernatur doloribus eius error libero ratione rerum! Alias autem excepturi
-                    exercitationem facilis laborum magni necessitatibus officia, praesentium quidem ratione, sequi velit.</p>
-            </div>
-            <div id="div2">
+<section id="mainSection">
+    <section id="subSection1">
+        <div id="div1">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aspernatur doloribus eius error libero
+                ratione rerum! Alias autem excepturi
+                exercitationem facilis laborum magni necessitatibus officia, praesentium quidem ratione, sequi
+                velit.</p>
+        </div>
+        <div id="div2">
 
-                <ul>
-                    <li>Hello</li>
-                    <li>CMJD</li>
-                    <li>GDSE</li>
-                </ul>
+            <ul>
+                <li>Hello</li>
+                <li>CMJD</li>
+                <li>GDSE</li>
+            </ul>
 
-                <ul>
-                    <li>Hello</li>
-                    <li>CMJD</li>
-                    <li>GDSE</li>
-                </ul>
+            <ul>
+                <li>Hello</li>
+                <li>CMJD</li>
+                <li>GDSE</li>
+            </ul>
 
-            </div>
+        </div>
+    </section>
+    <section id="subSection2">
+        <h1>Hello jQuery</h1>
+        <h2>Hello jQuery</h2>
+
+        <section id="para">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dolorem exercitationem f
+                acere minima nam possimus praesentium sit. Aliquid atque blanditiis eligendi,
+                facere fugit id nam, nisi nobis sapiente voluptas voluptates.</p>
         </section>
-        <section id="subSection2">
-            <h1>Hello jQuery</h1>
-            <h2>Hello jQuery</h2>
-
-            <section id="para">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dolorem exercitationem f
-                    acere minima nam possimus praesentium sit. Aliquid atque blanditiis eligendi,
-                    facere fugit id nam, nisi nobis sapiente voluptas voluptates.</p>
-            </section>
-
-        </section>
-
 
     </section>
+
+
+</section>
 
 
 <script src="assets/JQuery/jquery-3.6.1.min.js"></script>
 <script>
 
-        /* methods that we check */
-/*
+    /* methods that we check */
+    /*
 
-            children()
-            parent()
-            parents()
-            eq()
-            get()
-            children(":nth-child(1)")
-            children(":eq(1)")
-            []
+                children()
+                parent()
+                parents()
+                eq()
+                get()
+                children(":nth-child(1)")
+                children(":eq(1)")
+                []
+                find()
 
-*/
+    */
 
 
 
 
 
-        // traversing with jQuery
+    // traversing with jQuery
 
-        $("body").children();
-        // S.fn.init(4)[section#mainSection, script, script, script, prevObject: S.fn.init(1)]
+    $("body").children();
+    // S.fn.init(4)[section#mainSection, script, script, script, prevObject: S.fn.init(1)]
 
-        $("html").children();
-        // S.fn.init(2)[head, body, prevObject: S.fn.init(1)]
+    $("html").children();
+    // S.fn.init(2)[head, body, prevObject: S.fn.init(1)]
 
-        $("html").children('body');
-        //S.fn.init[body, prevObject: S.fn.init(1)]
+    $("html").children('body');
+    //S.fn.init[body, prevObject: S.fn.init(1)]
 
-        $("html").children(':nth-child(2)');
-        //S.fn.init[body, prevObject: S.fn.init(1)]
+    $("html").children(':nth-child(2)');
+    //S.fn.init[body, prevObject: S.fn.init(1)]
 
-        $("html").children(':nth-child(1)');
-        //S.fn.init[head, prevObject: S.fn.init(1)]
+    $("html").children(':nth-child(1)');
+    //S.fn.init[head, prevObject: S.fn.init(1)]
 
 
+    //====================================================================================================================================
 
-        //====================================================================================================================================
 
+    $("#subSection1").children();
+    // S.fn.init(2)[div#div1, div#div2, prevObject: S.fn.init(1)]
 
-        $("#subSection1").children();
-        // S.fn.init(2)[div#div1, div#div2, prevObject: S.fn.init(1)]
+    $("#subSection1").children('#div2').children();
+    // S.fn.init(2)[ul, ul, prevObject: S.fn.init(1)]
 
-        $("#subSection1").children('#div2').children();
-        // S.fn.init(2)[ul, ul, prevObject: S.fn.init(1)]
+    $("#subSection1").children('#div2').children(':nth-child(1)');
+    // S.fn.init[ul, prevObject: S.fn.init(1)]
 
-        $("#subSection1").children('#div2').children(':nth-child(1)');
-        // S.fn.init[ul, prevObject: S.fn.init(1)]
+    $("#subSection1").children('#div2').children(':nth-child(1)').children();
+    // S.fn.init(3)[li, li, li, prevObject: S.fn.init(1)]
 
-        $("#subSection1").children('#div2').children(':nth-child(1)').children();
-        // S.fn.init(3)[li, li, li, prevObject: S.fn.init(1)]
+    $("#subSection1").children('#div2').children(':nth-child(1)').children(':nth-child(2)').css('color', 'red');
+    // S.fn.init[li, prevObject: S.fn.init(1)]
 
-        $("#subSection1").children('#div2').children(':nth-child(1)').children(':nth-child(2)').css('color','red');
-        // S.fn.init[li, prevObject: S.fn.init(1)]
 
+    $("body").children();
+    //S.fn.init(4)[section#mainSection, script, script, script, prevObject: S.fn.init(1)]
 
+    $("body").children().eq("0");
+    //S.fn.init[section#mainSection, prevObject: S.fn.init(4)]
 
+    $("body").children().eq("1");
+    //S.fn.init[script, prevObject: S.fn.init(4)]
 
+    $("body").children(":eq(0)");   //same as the above method....select nth child
+    //S.fn.init[section#mainSection, prevObject: S.fn.init(1)]
 
+    $("body").children(":eq(1)");
+    //S.fn.init[script, prevObject: S.fn.init(1)]
 
-        $("body").children();
-        //S.fn.init(4)[section#mainSection, script, script, script, prevObject: S.fn.init(1)]
 
-        $("body").children().eq("0");
-        //S.fn.init[section#mainSection, prevObject: S.fn.init(4)]
+    $("body");
+    // S.fn.init[body, prevObject: S.fn.init(1)]
 
-        $("body").children().eq("1");
-        //S.fn.init[script, prevObject: S.fn.init(4)]
+    $("body").children();
+    // S.fn.init(4)[section#mainSection, script, script, script, prevObject: S.fn.init(1)]
 
-        $("body").children(":eq(0)");   //same as the above method....select nth child
-        //S.fn.init[section#mainSection, prevObject: S.fn.init(1)]
+    $("body").children(':nth-child(1)');    //return jQuery object
+    // S.fn.init[section#mainSection, prevObject: S.fn.init(1)]
 
-        $("body").children(":eq(1)");
-        //S.fn.init[script, prevObject: S.fn.init(1)]
+    $("body").children()[0];    // //return dom object
+    // <section id="mainSection">…</section>
 
+    $("body").children().get(0);    //return dom object
+    // <section id="mainSection">…</section>
 
+    $("body").children().get(0).css();  // error
 
 
-        $("body");
-        // S.fn.init[body, prevObject: S.fn.init(1)]
+    $('body').children().get(0);    //return dom element
+    // <section id="mainSection">…</section>
 
-        $("body").children();
-        // S.fn.init(4)[section#mainSection, script, script, script, prevObject: S.fn.init(1)]
+    $($('body').children().get(0));     //if we want to convert into jQuery object we can use $()
+    // S.fn.init[section#mainSection]
 
-        $("body").children(':nth-child(1)');    //return jQuery object
-        // S.fn.init[section#mainSection, prevObject: S.fn.init(1)]
+    $($('body').children().get(0)).text();  //now we can call jQuery methods
 
-        $("body").children()[0];    // //return dom object
-        // <section id="mainSection">…</section>
 
-        $("body").children().get(0);    //return dom object
-        // <section id="mainSection">…</section>
+    $("body").children();
+    // S.fn.init(4)[section#mainSection, script, script, script, prevObject: S.fn.init(1)]
 
-        $("body").children().get(0).css();  // error
+    $("body").children("section");
+    // S.fn.init[section#mainSection, prevObject: S.fn.init(1)]
 
+    $("body").children("section").parent();
+    // S.fn.init[body, prevObject: S.fn.init(1)]
 
+    $("body").parent();
+    // S.fn.init[html, prevObject: S.fn.init(1)]
 
+    $("#div1").parent();
+    // S.fn.init[section#subSection1, prevObject: S.fn.init(1)]
 
-        $('body').children().get(0);    //return dom element
-        // <section id="mainSection">…</section>
+    $("#div1").parent().parent();
+    // S.fn.init[section#mainSection, prevObject: S.fn.init(1)]
 
-        $($('body').children().get(0));     //if we want to convert into jQuery object we can use $()
-        // S.fn.init[section#mainSection]
 
-        $($('body').children().get(0)).text();  //now we can call jQuery methods
+    /* parent vs parents*/
 
 
+    $("#div1").parent();    // return only one
+    // S.fn.init[section#subSection1, prevObject: S.fn.init(1)]
 
+    $("#div1").parents();
+    // S.fn.init(4)[section#subSection1, section#mainSection, body, html, prevObject: S.fn.init(1)]
 
+    $("#div1").parents("body");     // we can filter out also
+    // S.fn.init[body, prevObject: S.fn.init(1)]
 
-        $("body").children();
-        // S.fn.init(4)[section#mainSection, script, script, script, prevObject: S.fn.init(1)]
+    $("#div1").parents("section");
+    // S.fn.init(2)[section#subSection1, section#mainSection, prevObject: S.fn.init(1)]
 
-        $("body").children("section");
-        // S.fn.init[section#mainSection, prevObject: S.fn.init(1)]
 
-        $("body").children("section").parent();
-        // S.fn.init[body, prevObject: S.fn.init(1)]
+    /* find*/
 
-        $("body").parent();
-        // S.fn.init[html, prevObject: S.fn.init(1)]
 
-        $("#div1").parent();
-        // S.fn.init[section#subSection1, prevObject: S.fn.init(1)]
+    $("body").find('h1');
+    // S.fn.init[h1, prevObject: S.fn.init(1)]
 
-        $("#div1").parent().parent();
-        // S.fn.init[section#mainSection, prevObject: S.fn.init(1)]
+    $("body").find('h1').css('color', 'red');
+    // S.fn.init[h1, prevObject: S.fn.init(1)]
 
+    $("body").find('p');
+    // S.fn.init(2)[p, p, prevObject: S.fn.init(1)]
 
+    $("body").find('p').eq(1);
+    // S.fn.init[p, prevObject: S.fn.init(2)]
 
-
-        /* parent vs parents*/
-
-
-        $("#div1").parent();    // return only one
-        // S.fn.init[section#subSection1, prevObject: S.fn.init(1)]
-
-        $("#div1").parents();
-        // S.fn.init(4)[section#subSection1, section#mainSection, body, html, prevObject: S.fn.init(1)]
-
-        $("#div1").parents("body");     // we can filter out also
-        // S.fn.init[body, prevObject: S.fn.init(1)]
-
-        $("#div1").parents("section");
-        // S.fn.init(2)[section#subSection1, section#mainSection, prevObject: S.fn.init(1)]
-
-
-
-
-
+    $("body").find('p').eq(1).remove();
+    // S.fn.init[p, prevObject: S.fn.init(2)]
 
 
 </script>

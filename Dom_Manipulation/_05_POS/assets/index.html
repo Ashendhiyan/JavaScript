@@ -876,11 +876,23 @@
         // bind the event after  the raw was aded
         $("#CtblCustomer>tr").click(function () {
 
-            $("#CusId").text($("#CtblCustomer>tr").children(':nth-child(1)'));
-            $("#CusName").text($("#CtblCustomer>tr").children(':nth-child(2)'));
-            $("#CusAddress").text($("#CtblCustomer>tr").children(':nth-child(3)'));
-            $("#CusSalary").text($("#CtblCustomer>tr").children(':nth-child(4)'));
-            console.log("Hi");
+            //this       //dom object
+            //$(this)   //jQuery object
+
+
+            let customId =  $(this).children(':nth-child(1)').text();
+            let customName = $(this).children(':nth-child(2)').text();
+            let customAddress = $(this).children(':nth-child(3)').text();
+            let customSalary = $(this).children(':nth-child(4)').text();
+
+
+            console.log(customId,customName,customAddress,customSalary);
+
+            $("#CusId").val(customId);
+            $("#CusName").val(customName);
+            $("#CusAddress").val(customAddress);
+            $("#CusSalary").val(customSalary);
+
         });
 
 
