@@ -861,14 +861,15 @@
         var CusTableAddress = $("#txtCusAddress").val();
         var CusTableSalary = $("#txtCusSalary").val();
 
-     /*   $("#CusId").text(CusTableId);
-        $("#CusName").text(CusTableName);
-        $("#CusAddress").text(CusTableAddress);
-        $("#CusSalary").text(CusTableSalary);
-*/
 
         console.log(CusTableId,CusTableName,CusTableAddress,CusTableSalary);
         console.log(typeof CusTableId,typeof CusTableName,typeof CusTableAddress,typeof CusTableSalary);
+
+        let row = `<tr><td>${CusTableId}</td><td>${CusTableName}</td><td>${CusTableAddress}</td><td>${CusTableSalary}</td></tr>`;
+
+        $("#CtblCustomer").append(row);
+        alert("Customer saved..!");
+
 
     });
 
