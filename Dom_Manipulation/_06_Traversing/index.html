@@ -104,6 +104,28 @@
         $("body").children(":eq(1)");
         //S.fn.init[script, prevObject: S.fn.init(1)]
 
+
+
+
+        $("body");
+        // S.fn.init[body, prevObject: S.fn.init(1)]
+
+        $("body").children();
+        // S.fn.init(4)[section#mainSection, script, script, script, prevObject: S.fn.init(1)]
+
+        $("body").children(':nth-child(1)');    //return jQuery object
+        // S.fn.init[section#mainSection, prevObject: S.fn.init(1)]
+
+        $("body").children()[0];    // //return dom object
+        // <section id="mainSection">…</section>
+
+        $("body").children().get(0);    //return dom object
+        // <section id="mainSection">…</section>
+
+        $("body").children().get(0).css();  // error
+
+
+
 </script>
 </body>
 </html>
