@@ -136,6 +136,29 @@
         $($('body').children().get(0)).text();  //now we can call jQuery methods
 
 
+
+
+
+        $("body").children();
+        // S.fn.init(4)[section#mainSection, script, script, script, prevObject: S.fn.init(1)]
+
+        $("body").children("section");
+        // S.fn.init[section#mainSection, prevObject: S.fn.init(1)]
+
+        $("body").children("section").parent();
+        // S.fn.init[body, prevObject: S.fn.init(1)]
+
+        $("body").parent();
+        // S.fn.init[html, prevObject: S.fn.init(1)]
+
+        $("#div1").parent();
+        // S.fn.init[section#subSection1, prevObject: S.fn.init(1)]
+
+        $("#div1").parent().parent();
+        // S.fn.init[section#mainSection, prevObject: S.fn.init(1)]
+
+
+
 </script>
 </body>
 </html>
