@@ -126,6 +126,16 @@
 
 
 
+
+        $('body').children().get(0);    //return dom element
+        // <section id="mainSection">…</section>
+
+        $($('body').children().get(0));     //if we want to convert into jQuery object we can use $()
+        // S.fn.init[section#mainSection]
+
+        $($('body').children().get(0)).text();  //now we can call jQuery methods
+
+
 </script>
 </body>
 </html>
