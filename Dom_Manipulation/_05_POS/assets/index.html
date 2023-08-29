@@ -865,10 +865,18 @@
         console.log(CusTableId,CusTableName,CusTableAddress,CusTableSalary);
         console.log(typeof CusTableId,typeof CusTableName,typeof CusTableAddress,typeof CusTableSalary);
 
+        // create a html row
         let row = `<tr><td>${CusTableId}</td><td>${CusTableName}</td><td>${CusTableAddress}</td><td>${CusTableSalary}</td></tr>`;
 
+        //select the table body and append the row
         $("#CtblCustomer").append(row);
         alert("Customer saved..!");
+
+
+        // bind the event after  the raw was aded
+        $("#CtblCustomer>tr").click(function () {
+            console.log(this);
+        });
 
 
     });

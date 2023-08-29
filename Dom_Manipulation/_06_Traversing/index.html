@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>traversing with jQuery</title>
+</head>
+<body>
+
+    <section id="mainSection">
+        <section id="subSection1">
+            <div id="div1">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aspernatur doloribus eius error libero ratione rerum! Alias autem excepturi
+                    exercitationem facilis laborum magni necessitatibus officia, praesentium quidem ratione, sequi velit.</p>
+            </div>
+            <div id="div2">
+
+                <ul>
+                    <li>Hello</li>
+                    <li>CMJD</li>
+                    <li>GDSE</li>
+                </ul>
+
+                <ul>
+                    <li>Hello</li>
+                    <li>CMJD</li>
+                    <li>GDSE</li>
+                </ul>
+
+            </div>
+        </section>
+        <section id="subSection2">
+            <h1>Hello jQuery</h1>
+            <h2>Hello jQuery</h2>
+
+            <section id="para">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dolorem exercitationem f
+                    acere minima nam possimus praesentium sit. Aliquid atque blanditiis eligendi,
+                    facere fugit id nam, nisi nobis sapiente voluptas voluptates.</p>
+            </section>
+
+        </section>
+
+
+    </section>
+
+
+<script src="assets/JQuery/jquery-3.6.1.min.js"></script>
+<script>
+
+        // traversing with jQuery
+
+        $("body").children();
+        // S.fn.init(4)[section#mainSection, script, script, script, prevObject: S.fn.init(1)]
+
+        $("html").children();
+        // S.fn.init(2)[head, body, prevObject: S.fn.init(1)]
+
+        $("html").children('body');
+        //S.fn.init[body, prevObject: S.fn.init(1)]
+
+        $("html").children(':nth-child(2)');
+        //S.fn.init[body, prevObject: S.fn.init(1)]
+
+        $("html").children(':nth-child(1)');
+        //S.fn.init[head, prevObject: S.fn.init(1)]
+</script>
+</body>
+</html>
