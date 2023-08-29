@@ -63,6 +63,47 @@
 
         $("html").children(':nth-child(1)');
         //S.fn.init[head, prevObject: S.fn.init(1)]
+
+
+
+        //====================================================================================================================================
+
+
+        $("#subSection1").children();
+        // S.fn.init(2)[div#div1, div#div2, prevObject: S.fn.init(1)]
+
+        $("#subSection1").children('#div2').children();
+        // S.fn.init(2)[ul, ul, prevObject: S.fn.init(1)]
+
+        $("#subSection1").children('#div2').children(':nth-child(1)');
+        // S.fn.init[ul, prevObject: S.fn.init(1)]
+
+        $("#subSection1").children('#div2').children(':nth-child(1)').children();
+        // S.fn.init(3)[li, li, li, prevObject: S.fn.init(1)]
+
+        $("#subSection1").children('#div2').children(':nth-child(1)').children(':nth-child(2)').css('color','red');
+        // S.fn.init[li, prevObject: S.fn.init(1)]
+
+
+
+
+
+
+        $("body").children();
+        //S.fn.init(4)[section#mainSection, script, script, script, prevObject: S.fn.init(1)]
+
+        $("body").children().eq("0");
+        //S.fn.init[section#mainSection, prevObject: S.fn.init(4)]
+
+        $("body").children().eq("1");
+        //S.fn.init[script, prevObject: S.fn.init(4)]
+
+        $("body").children(":eq(0)");   //same as the above method....select nth child
+        //S.fn.init[section#mainSection, prevObject: S.fn.init(1)]
+
+        $("body").children(":eq(1)");
+        //S.fn.init[script, prevObject: S.fn.init(1)]
+
 </script>
 </body>
 </html>

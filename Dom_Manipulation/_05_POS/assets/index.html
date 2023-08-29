@@ -317,7 +317,7 @@
                     <div class="col-5 col-sm-5 col-lg">
                         <div class="mb-4">
                             <label class="form-label" for="CusId">Customer ID</label>
-                            <input class="form-control" disabled id="CusId" placeholder="C001" type="text">
+                            <input class="form-control" disabled id="CusId"  type="text">
                         </div>
                     </div>
 
@@ -875,7 +875,12 @@
 
         // bind the event after  the raw was aded
         $("#CtblCustomer>tr").click(function () {
-            console.log(this);
+
+            $("#CusId").text($("#CtblCustomer>tr").children(':nth-child(1)'));
+            $("#CusName").text($("#CtblCustomer>tr").children(':nth-child(2)'));
+            $("#CusAddress").text($("#CtblCustomer>tr").children(':nth-child(3)'));
+            $("#CusSalary").text($("#CtblCustomer>tr").children(':nth-child(4)'));
+            console.log("Hi");
         });
 
 
