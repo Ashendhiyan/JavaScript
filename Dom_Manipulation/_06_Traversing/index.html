@@ -52,6 +52,7 @@
 
             children()
             parent()
+            parents()
             eq()
             get()
             children(":nth-child(1)")
@@ -173,6 +174,28 @@
 
         $("#div1").parent().parent();
         // S.fn.init[section#mainSection, prevObject: S.fn.init(1)]
+
+
+
+
+        /* parent vs parents*/
+
+
+        $("#div1").parent();    // return only one
+        // S.fn.init[section#subSection1, prevObject: S.fn.init(1)]
+
+        $("#div1").parents();
+        // S.fn.init(4)[section#subSection1, section#mainSection, body, html, prevObject: S.fn.init(1)]
+
+        $("#div1").parents("body");     // we can filter out also
+        // S.fn.init[body, prevObject: S.fn.init(1)]
+
+        $("#div1").parents("section");
+        // S.fn.init(2)[section#subSection1, section#mainSection, prevObject: S.fn.init(1)]
+
+
+
+
 
 
 
