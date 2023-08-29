@@ -466,12 +466,12 @@
                                         <input class="form-control" id="item-name" type="text">
                                     </div>
                                     <div>
-                                        <label class="col-form-label" for="item-Price">Item Price:</label>
-                                        <input class="form-control" id="item-Price" type="text">
+                                        <label class="col-form-label" for="item-qty">Quantity:</label>
+                                        <input class="form-control" id="item-qty" type="text">
                                     </div>
                                     <div>
-                                        <label class="col-form-label" for="item-qty">Item Quantity:</label>
-                                        <input class="form-control" id="item-qty" type="number">
+                                        <label class="col-form-label" for="item-pricee">Item price:</label>
+                                        <input class="form-control" id="item-pricee" type="text">
                                     </div>
                                 </form>
                             </div>
@@ -501,28 +501,28 @@
                 <div class="col-5 col-sm-5 col-lg">
                     <div class="mb-4">
                         <label class="form-label" for="IitemId">Item Code</label>
-                        <input class="form-control" disabled id="IitemId" placeholder="P001" type="text">
+                        <input class="form-control" disabled id="IitemId"  type="text">
                     </div>
                 </div>
                 <!--Name-->
                 <div class="col-7 col-sm-7 col-lg">
                     <div class="mb-4">
                         <label class="form-label" for="itemName">Name</label>
-                        <input class="form-control" disabled id="itemName" placeholder="Sunlight" type="text">
+                        <input class="form-control" disabled id="itemName"  type="text">
                     </div>
                 </div>
                 <!--QTY-->
                 <div class="col col-lg">
                     <div class="mb-2">
                         <label class="form-label" for="QqtyOnHand">Quantity</label>
-                        <input class="form-control" disabled id="QqtyOnHand" placeholder="00" type="number">
+                        <input class="form-control" disabled id="QqtyOnHand"  type="text">
                     </div>
                 </div>
                 <!--UP-->
                 <div class="col col-lg">
                     <div class="mb-2">
                         <label class="form-label" for="Pprice">Unit Price</label>
-                        <input class="form-control" disabled id="Pprice" placeholder="0000.00" type="text">
+                        <input class="form-control" disabled id="Pprice"  type="text">
                     </div>
                 </div>
 
@@ -567,6 +567,7 @@
                 </tr>
                 </thead>
                 <tbody id="tblItem">
+
                 </tbody>
             </table>
         </div>
@@ -897,6 +898,48 @@
 
 
     });
+
+
+
+    //==================================================================================================================================
+
+    // add customer
+
+    $("#itemSaveButton").click(function () {
+        var itemTblCode = $('#item-code').val();
+        var itemTblName = $('#item-name').val();
+        var itemTblQty = $('#item-qty').val();
+        var itemTblPrice = $('#item-pricee').val();
+
+
+        console.log(itemTblCode,itemTblName,itemTblQty,itemTblPrice);
+        console.log(typeof itemTblCode,typeof itemTblName,typeof itemTblQty,typeof itemTblPrice);
+
+        var itemRow = `<tr><td>${itemTblCode}</td><td>${itemTblName}</td><td>${itemTblQty}</td><td>${itemTblPrice}</td></tr>`
+
+        $('#tblItem').append(itemRow);
+
+
+        $('#tblItem>tr').click(function () {
+            var itemcode = $(this).children(':eq(0)').text();
+            var itemName = $(this).children(':eq(1)').text();
+            var itemQty = $(this).children(':eq(2)').text();
+            var itemPrice = $(this).children(':eq(3)').text();
+
+            console.log(itemcode,itemName,itemQty,itemPrice);
+
+
+            $('#IitemId').val(itemcode);
+            $('#itemName').val(itemName);
+            $('#QqtyOnHand').val(itemQty);
+            $('#Pprice').val(itemPrice);
+
+        });
+
+    });
+
+
+
 
 
 </script>
