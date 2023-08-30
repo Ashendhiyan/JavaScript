@@ -853,7 +853,11 @@
 
     /*add customer*/
 
-    $("#CbtnSaveCustomer").click(function () {
+    $("#CbtnSaveCustomer").on("click",function () {
+
+        //remove all the row events
+        $("#CtblCustomer>tr").off('click');
+
 
         // gather customer information
 
@@ -903,9 +907,13 @@
 
     //==================================================================================================================================
 
-    // add customer
+    // add item
 
     $("#itemSaveButton").click(function () {
+
+
+        $("#tblItem>tr").off("click");
+
         var itemTblCode = $('#item-code').val();
         var itemTblName = $('#item-name').val();
         var itemTblQty = $('#item-qty').val();

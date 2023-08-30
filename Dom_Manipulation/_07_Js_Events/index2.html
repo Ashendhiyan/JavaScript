@@ -47,17 +47,20 @@
 
     // Formalised Method - Short way
 
-  /*  $("#btnTest").click(function (){
+    $("#btnTest").click(function (){
         alert('Hello');
-    });*/
-
+    });
 
 
     // Standard way for writing event in JQuery
 
-    $("#btnTest").on('click',function (){
-        alert('Standard way');
+    $("#btnTest").on('dblclick',function (){        //double click
+       console.log('Standard way');
     });
+
+
+    //$("#btnTest").off();      //turn off all the events of btnTest
+    //$("#btnTest").off("dblclick");       //turn off only dblclick event of btnTest
 
 </script>
 </body>
