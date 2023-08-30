@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Specified Events</title>
+
+    <style>
+        div {
+            background: red;
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+
+</head>
+<body>
+
+
+<div>
+
+</div>
+
+<br>
+<input id="txtCusId" type="text">
+<button id="btnTest">Test</button>
+<br>
+<br>
+
+<input id="txtCusName" type="text">
+<button >Test</button>
+<br>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam autem, blanditiis deleniti dolore,
+    doloremque, ea expedita iusto molestias mollitia numquam officia possimus rem reprehenderit sed tempore temporibus
+    tenetur voluptatem.</p>
+
+<script src="assets/JQuery/jquery-3.6.1.min.js"></script>
+<script>
+
+    // Specified Event
+
+   /* document.getElementById("btnTest").addEventListener("click",function (){
+      alert('clicked..');
+    });*/
+
+
+
+    // Formalised Method - Short way
+
+  /*  $("#btnTest").click(function (){
+        alert('Hello');
+    });*/
+
+
+
+    // Standard way for writing event in JQuery
+
+    $("#btnTest").on('click',function (){
+        alert('Standard way');
+    });
+
+</script>
+</body>
+</html>
