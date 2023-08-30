@@ -15,18 +15,18 @@
 <body>
 
 
-<div>
+<div onmousedown="printSomething()">
 
 </div>
 
 <br>
 <input type="text" id="txtCusId">
-<button>Test</button>
+<button onclick="alert('Hello')">Test</button>
 <br>
 <br>
 
 <input type="text" id="txtCusName">
-<button>Test</button>
+<button onmousemove="console.log('mouse moved..')">Test</button>
 <br>
 
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam autem, blanditiis deleniti dolore, doloremque, ea expedita iusto molestias mollitia numquam officia possimus rem reprehenderit sed tempore temporibus tenetur voluptatem.</p>
@@ -39,7 +39,9 @@
 
 <script src="assets/JQuery/jquery-3.6.1.min.js"></script>
 <script>
-
+    function printSomething(){
+        console.log('mouse down');
+    }
 
 </script>
 </body>
