@@ -47,20 +47,50 @@
 
     // Formalised Method - Short way
 
-    $("#btnTest").click(function (){
+   /* $("#btnTest").click(function (){
         alert('Hello');
-    });
+    });*/
 
 
     // Standard way for writing event in JQuery
 
-    $("#btnTest").on('dblclick',function (){        //double click
+  /*  $("#btnTest").on('dblclick',function (){        //double click
        console.log('Standard way');
     });
-
+*/
 
     //$("#btnTest").off();      //turn off all the events of btnTest
     //$("#btnTest").off("dblclick");       //turn off only dblclick event of btnTest
+
+
+    /*       Formalized methods
+    * click(function)
+    * dblclick(function)
+    * focus(function)
+    * blur(function)
+    * keydown(function)
+    * keyup(function)
+    * keypress(function)
+    * mousedown(function)
+    * mouseup(function)
+    * mousemove(function)
+    * */
+
+
+    $("#btnTest").click(function (){
+        alert("Hello");
+    });
+
+    $("#btnTest").dbl;
+
+
+    $("#btnTest").focus(function (){
+        alert("Hello");
+        console.log("focus");
+    });
+
+    $("");
+
 
 </script>
 </body>
