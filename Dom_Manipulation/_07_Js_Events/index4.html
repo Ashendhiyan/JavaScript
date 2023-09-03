@@ -48,6 +48,16 @@
                 $("#txtCusAddress").focus();
             }
         });
+        $("#txtCusAddress").keydown(function (event2){
+            if (event2.key=="Enter"){
+                $("#txtCusSalary").focus();
+            }
+        });
+        $("#txtCusSalary").keydown(function (event3){
+            if (event3.key=="Enter"){
+                $("#header").text("Done..!");
+            }
+        });
 
     });
 
