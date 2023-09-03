@@ -40,9 +40,14 @@
         // console.log(event.code);    // KeyA
         // console.log(event.key);    // A
 
-        if (event.code=="Enter"){
+        if (event.key=="Enter"){
             $("#txtCusName").focus();
         }
+        $("#txtCusName").keydown(function (event1){
+            if (event1.key=="Enter"){
+                $("#txtCusAddress").focus();
+            }
+        });
 
     });
 
