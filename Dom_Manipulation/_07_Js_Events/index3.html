@@ -5,7 +5,7 @@
     <title>Formalized Events In JQuery</title>
 </head>
 <body>
-    <h1>Hello js..!</h1>
+    <h1 id="header">Hello js..!</h1>
     <input type="text" id="txtCusId" placeholder="ID">
     <br><br>
     <input type="text" id="txtCusName" placeholder="Name">
@@ -14,17 +14,83 @@
     <br><br>
     <input type="text" id="txtCusSalary" placeholder="Salary">
     <br><br>
-    <button>Save Customer</button>
-
-
-
-
-    //=========================================================================
+    <button id="saveCustomer">Save Customer</button>
 
 
 
 <script src="assets/JQuery/jquery-3.6.1.min.js"></script>
 <script>
+
+
+
+    /*       Formalized methods
+    * click(function)
+    * dblclick(function)
+    * focus(function)
+    * blur(function)
+    * keydown(function)
+    * keyup(function)
+    * keypress(function)
+    * mousedown(function)
+    * mouseup(function)
+    * mousemove(function)
+    * */
+
+
+ /*   $("#saveCustomer").click(function (){
+        alert("Saved..");
+    });
+*/
+
+
+
+/*
+    $("#saveCustomer").on("dblclick",function (){
+        alert("Double Clicked");
+    });
+
+    $('#saveCustomer').dblclick(function (){
+        alert("double clicked");
+    });
+*/
+
+
+
+
+    // $("#txtCusId").focus();
+
+
+/*    $("#txtCusId").blur(function (){    //when focus out
+        console.log("Customer id blured");
+    });*/
+
+
+/*
+    $("#txtCusName").keydown(function (){
+        console.log("key down");
+    });
+
+    $("#txtCusAddress").keyup(function (){
+        console.log("key up");
+    });
+
+    $("#txtCusSalary").keypress(function (){
+        console.log("key pressed");
+    });*/
+
+
+   /* $("#txtCusName").keydown(function (){
+        console.log("key down");
+    });
+
+    $("#txtCusName").keyup(function (){
+        console.log("key up");
+    });
+
+    $("#txtCusName").keypress(function (){
+        console.log("key pressed");
+    });
+*/
 
 
 </script>
