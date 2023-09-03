@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formalized Events In JQuery</title>
+</head>
+<body>
+    <h1 id="header">Hello js..!</h1>
+    <input type="text" id="txtCusId" placeholder="ID">
+    <br><br>
+    <input type="text" id="txtCusName" placeholder="Name">
+    <br><br>
+    <input type="text" id="txtCusAddress" placeholder="Address">
+    <br><br>
+    <input type="text" id="txtCusSalary" placeholder="Salary">
+    <br><br>
+    <button id="saveCustomer">Save Customer</button>
+
+
+
+<script src="assets/JQuery/jquery-3.6.1.min.js"></script>
+<script>
+
+
+
+    /*       Formalized methods
+    * click(function)
+    * dblclick(function)
+    * focus(function)
+    * blur(function)
+    * keydown(function)
+    * keyup(function)
+    * keypress(function)
+    * mousedown(function)
+    * mouseup(function)
+    * mousemove(function)
+    * */
+
+    $("#txtCusId").keydown(function (event){
+        // console.log(event.code);    // KeyA
+        // console.log(event.key);    // A
+
+        if (event.code=="Enter"){
+            $("#txtCusName").focus();
+        }
+
+    });
+
+</script>
+</body>
+</html>
