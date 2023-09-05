@@ -853,6 +853,34 @@
 
     /*add customer*/
 
+
+    $("#txtCusId").keydown(function (event){
+        if (event.key=="Enter"){
+            $("#txtCusName").focus();
+        }
+    });
+
+    $("#txtCusName").keydown(function (event){
+        if (event.key=="Enter"){
+            $("#txtCusAddress").focus();
+        }
+    });
+
+    $("#txtCusAddress").keydown(function (event){
+        if (event.key=="Enter"){
+            $("#txtCusSalary").focus();
+        }
+    });
+
+    $('#txtCusSalary').keydown(function (event){
+        if (event.key=="Enter"){
+            $('#CbtnSaveCustomer').focus();
+        }
+    });
+
+
+
+
     $("#CbtnSaveCustomer").on("click",function () {
 
         //remove all the row events
