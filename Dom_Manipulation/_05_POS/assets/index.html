@@ -851,7 +851,7 @@
     });
 
 
-    /*add customer*/
+    /*add customer events*/
 
 
     $("#txtCusId").keydown(function (event){
@@ -879,7 +879,7 @@
     });
 
 
-
+    /* add customer */
 
     $("#CbtnSaveCustomer").on("click",function () {
 
@@ -935,7 +935,34 @@
 
     //==================================================================================================================================
 
-    // add item
+    // add item events
+
+    $('#item-code').keydown(function (event){
+        if (event.key=="Enter"){
+            $("#item-name").focus();
+        }
+    });
+
+    $("#item-name").keydown(function (event){
+        if (event.key=="Enter"){
+            $("#item-qty").focus();
+        }
+    });
+
+    $("#item-qty").keydown(function (event){
+        if (event.key=="Enter"){
+            $("#item-pricee").focus();
+        }
+    });
+
+    $("#item-pricee").keydown(function (event){
+        if (event.key=="Enter"){
+            $("#itemSaveButton").focus();
+        }
+    });
+
+
+    /* add item */
 
     $("#itemSaveButton").click(function () {
 
@@ -954,7 +981,7 @@
         var itemRow = `<tr><td>${itemTblCode}</td><td>${itemTblName}</td><td>${itemTblQty}</td><td>${itemTblPrice}</td></tr>`
 
         $('#tblItem').append(itemRow);
-
+        alert("Item saved..!");
 
         $('#tblItem>tr').click(function () {
             var itemcode = $(this).children(':eq(0)').text();
