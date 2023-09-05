@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mouse Events</title>
+
+    <style>
+        div{
+            background: red;
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+
+</div>
+
+<script src="assets/JQuery/jquery-3.6.1.min.js"></script>
+<script>
+
+    $('div').mouseup(function (){
+        console.log("mouse up");
+    });
+
+    $('div').mousedown(function (){
+        console.log("mouse down");
+    });
+    $('div').mousemove(function (){
+        console.log("mouse move");
+    });
+
+</script>
+</body>
+</html>
