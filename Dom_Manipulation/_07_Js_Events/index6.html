@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mouse Events</title>
+</head>
+<body>
+<h1>Hello there.! , How are you ?</h1>
+<div>
+
+</div>
+
+<script src="assets/JQuery/jquery-3.6.1.min.js"></script>
+<script>
+
+    $(window).mousemove(function (event){
+        // console.log(event.pageX,event.pageY);
+        $("h1").css("position","relative");
+        $("h1").css("left",event.pageX);
+        $("h1").css("top",event.pageY);
+    });
+
+</script>
+</body>
+</html>
