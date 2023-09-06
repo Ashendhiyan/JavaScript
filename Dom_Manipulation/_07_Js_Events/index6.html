@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Mouse Events</title>
+    <style>
+        /* hide scroll bar*/
+        body{
+            overflow: hidden;
+        }
+    </style>
+
 </head>
 <body>
 <h1>Hello there.! , How are you ?</h1>
@@ -14,7 +21,7 @@
 <script>
 
     $(window).mousemove(function (event){
-        // console.log(event.pageX,event.pageY);
+        // console.log(event.pageX,event.pageY);  // mouse current location X and Y
         $("h1").css("position","relative");
         $("h1").css("left",event.pageX);
         $("h1").css("top",event.pageY);
