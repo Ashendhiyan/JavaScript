@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mouse Events</title>
+    <style>
+        /* hide scroll bar*/
+        body{
+            overflow: hidden;
+        }
+    </style>
+
+</head>
+<body>
+<h1>Hello there.! <!--, How are you ?--></h1>
+<div>
+
+</div>
+
+<script src="assets/JQuery/jquery-3.6.1.min.js"></script>
+<script>
+
+
+    let text = $("h1").text();
+
+    var position = 0;
+    function animateText(){
+
+        let output = text.substring(0,position);
+        console.log(output);
+        position++;
+
+        if (position==text.length){
+            position=0;
+        }
+
+    }
+
+
+
+    $(window).mousemove(function (event){
+        // console.log(event.pageX,event.pageY);  // mouse current location X and Y
+        $("h1").css("position","relative");
+        $("h1").css("left",event.pageX);
+        $("h1").css("top",event.pageY);
+    });
+
+</script>
+</body>
+</html>
