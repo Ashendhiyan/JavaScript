@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Timers</title>
+</head>
+<body>
+<h1>JS Timers..</h1>
+<h2>1</h2>
+<button id="btnStart">Start</button>
+
+
+<script src="assets/JQuery/jquery-3.6.1.min.js"></script>
+<script>
+
+    //why timers?
+    //when we want to wait a time and call something (function) we can use timing functions
+
+
+    //we have two timers
+    /*
+    * setTimeout();  wait and call
+    * setInterval();  wait and call recursively
+    */
+   /* function callMe(){
+        console.log("call me function Called");
+    }
+*/
+   // setInterval(callMe,300);    // call the method recursively after the given time period
+    //setTimeout(callMe,1000);
+
+
+
+
+
+
+    $('#btnStart').click(function (){
+        setInterval( animateNumber,100);
+    });
+
+
+    var position = 1;
+    function animateNumber(){
+        $('h2').text(position);
+        position++;
+
+    }
+
+
+</script>
+</body>
+</html>
