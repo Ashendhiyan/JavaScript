@@ -7,7 +7,8 @@
 <body>
 <h1>JS Timers..</h1>
 <h2>1</h2>
-<button id="btnStart">Start</button>
+<button id="btnStart">START</button>
+<button id="btnStop">STOP</button>
 
 
 <script src="assets/JQuery/jquery-3.6.1.min.js"></script>
@@ -22,29 +23,41 @@
     * setTimeout();  wait and call
     * setInterval();  wait and call recursively
     */
-   /* function callMe(){
-        console.log("call me function Called");
-    }
-*/
-   // setInterval(callMe,300);    // call the method recursively after the given time period
+    /* function callMe(){
+         console.log("call me function Called");
+     }
+ */
+    // setInterval(callMe,300);    // call the method recursively after the given time period
     //setTimeout(callMe,1000);
 
 
+    let timeId;
 
-
-
-
-    $('#btnStart').click(function (){
-        setInterval( animateNumber,100);
+    $('#btnStart').click(function () {
+        timeId = setInterval(animateNumber, 100);
     });
 
 
     var position = 1;
-    function animateNumber(){
+
+    function animateNumber() {
         $('h2').text(position);
         position++;
 
     }
+
+
+    // How to stop timing function
+
+    /*
+    * setTimeout (create) - > clearTimeout()
+    * setInterval (create) - > clearInterval
+    **/
+
+
+    $('#btnStop').click(function (){
+        clearInterval(timeId);
+    });
 
 
 </script>
