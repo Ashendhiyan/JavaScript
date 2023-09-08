@@ -879,12 +879,12 @@
     });
 
 
-    /* add customer */
+    /* ==================================add customer======================== */
 
     $("#CbtnSaveCustomer").on("click",function () {
 
         //remove all the row events
-        $("#CtblCustomer>tr").off('click');
+        $("#CtblCustomer>tr").off();
 
 
         // gather customer information
@@ -928,8 +928,16 @@
 
         });
 
+        // double click to remove customer
+
+        $("#CtblCustomer>tr").dblclick(function (){
+           // alert("clicked");
+            $(this).remove()
+
+        });
 
     });
+
 
 
 
