@@ -12,7 +12,7 @@
 
 </head>
 <body>
-<h1>Hello there.! <!--, How are you ?--></h1>
+<h1>Hello there.! , How are you ?</h1>
 <div>
 
 </div>
@@ -27,7 +27,7 @@
     function animateText(){
 
         let output = text.substring(0,position);
-        console.log(output);
+        $('h1').text(output);
         position++;
 
         if (position==text.length){
@@ -35,6 +35,9 @@
         }
 
     }
+
+
+    setInterval(animateText,200);
 
 
 

@@ -34,7 +34,9 @@
     let timeId;
 
     $('#btnStart').click(function () {
+        clearInterval(timeId);
         timeId = setInterval(animateNumber, 100);
+        console.log(timeId);
     });
 
 
@@ -59,6 +61,16 @@
         clearInterval(timeId);
     });
 
+
+
+    // how to stop  a time out
+
+    let id = setTimeout(test,200)
+    clearTimeout(id);
+
+    function test(){
+        console.log('call after 200ms');
+    }
 
 </script>
 </body>
