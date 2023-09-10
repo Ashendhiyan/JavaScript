@@ -278,6 +278,7 @@
                                     <div>
                                         <label class="col-form-label" for="txtCusId">Customer ID:</label>
                                         <input class="form-control" id="txtCusId" type="text">
+                                        <p><small id="error" class="text-danger"></small></p>
                                     </div>
                                     <div>
                                         <label class="col-form-label" for="txtCusName">Customer Name:</label>
@@ -939,6 +940,21 @@
     });
 
 
+    // regular expression
+
+
+    var regExCusID = /^(C00-)[0-9]{3,4}$/
+
+    $('#txtCusId').keyup(function (){
+        var val = $('#txtCusId').val();
+        if (regExCusID.test(val)){
+            $('#txtCusId').css('border','2px solid green')
+            $('#error').text("");
+        }else {
+            $('#txtCusId').css("border","2px solid red");
+            $('#error').text("wrong format : C00-001");
+        }
+    });
 
 
     //==================================================================================================================================
