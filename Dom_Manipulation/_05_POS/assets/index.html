@@ -283,6 +283,7 @@
                                     <div>
                                         <label class="col-form-label" for="txtCusName">Customer Name:</label>
                                         <input class="form-control" id="txtCusName" type="text">
+                                        <p><small id="nameError" class="text-danger"></small></p>
                                     </div>
                                     <div>
                                         <label class="col-form-label" for="txtCusAddress">Address:</label>
@@ -956,6 +957,19 @@
         }
     });
 
+
+    var regExCusName = /^[a-zA-Z]{3,15}$/
+
+    $("#txtCusName").keyup(function (){
+        var name = $("#txtCusName").val();
+        if (regExCusName.test(name)){
+            $("#txtCusName").css("border","2px solid green");
+            $("#nameError").text("");
+        }else {
+            $("#txtCusName").css("border","2px solid red");
+            $("#nameError").text("wrong format : A-Z or a-z");
+        }
+    });
 
     //==================================================================================================================================
 
