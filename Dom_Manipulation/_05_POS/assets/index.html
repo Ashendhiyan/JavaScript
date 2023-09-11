@@ -989,6 +989,21 @@
 
 
 
+
+    var regExSalary = /^[0-9]{2,10}$/;
+
+    $("#txtCusSalary").keyup(function (){
+        var salary = $("#txtCusSalary").val();
+        if (regExSalary.test(salary)){
+            $('#txtCusSalary').css('border','2px solid green');
+            $('#salaryError').text("");
+        }else{
+            $('#txtCusSalary').css('border','2px solid red');
+            $('#salaryError').text("wrong format : 100.00 or 100");
+        }
+    });
+
+
     //==================================================================================================================================
 
     // add item events
