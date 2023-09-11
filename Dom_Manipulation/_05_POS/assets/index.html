@@ -288,10 +288,12 @@
                                     <div>
                                         <label class="col-form-label" for="txtCusAddress">Address:</label>
                                         <input class="form-control" id="txtCusAddress" type="text">
+                                        <p><small id="addressError" class="text-danger"></small></p>
                                     </div>
                                     <div>
                                         <label class="col-form-label" for="txtCusSalary">Salary:</label>
                                         <input class="form-control" id="txtCusSalary" type="text">
+                                        <p><small id="salaryError" class="text-danger"></small></p>
                                     </div>
                                 </form>
                             </div>
@@ -970,6 +972,22 @@
             $("#nameError").text("wrong format : A-Z or a-z");
         }
     });
+
+
+    var regExAddress = /^[a-zA-Z]{3,25}$/;
+
+    $("#txtCusAddress").keyup(function (){
+        var address = $("#txtCusAddress").val();
+        if (regExAddress.test(address)){
+            $("#txtCusAddress").css('border','2px solid green');
+            $('#addressError').text("");
+        }else {
+            $("#txtCusAddress").css('border','2px solid red');
+            $('#addressError').text("wrong format : a-z or A-Z");
+        }
+    });
+
+
 
     //==================================================================================================================================
 
