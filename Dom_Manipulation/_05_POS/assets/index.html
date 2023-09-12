@@ -994,7 +994,7 @@
 
 
 
-    var regExSalary = /^[0-9]{2,10}$/;
+    var regExSalary = /^[0-9.]{2,10}$/;
 
     $("#txtCusSalary").keyup(function (){
         var salary = $("#txtCusSalary").val();
@@ -1120,6 +1120,21 @@
             $("#itemQtyError").text("wrong format : 0-9 ");
         }
     });
+
+
+    var regExPrice = /^[0-9.]{2,10}$/;
+
+    $("#item-pricee").keyup(function (){
+        var price = $("#item-pricee").val();
+        if (regExPrice.test(price)){
+            $("#item-pricee").css("border","2px solid green");
+            $("#itemPriceError").text("");
+        }else {
+            $("#item-pricee").css("border","2px solid red");
+            $("#itemPriceError").text("wrong format : 100 or  100.00 ");
+        }
+    });
+
 
     //========================================================================================================
     //========================================================================================================
