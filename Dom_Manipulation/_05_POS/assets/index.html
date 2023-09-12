@@ -863,26 +863,40 @@
 
 
     $("#txtCusId").keydown(function (event){
-        if (event.key=="Enter"){
-            $("#txtCusName").focus();
+        if (isMatchCustomerId){
+            $("#txtCusName").css("border","2px solid red");
+            $("#nameError").text("Wrong format : a-z or A-Z");
+            if (event.key=="Enter"){
+                $("#txtCusName").focus();
+            }
         }
     });
 
     $("#txtCusName").keydown(function (event){
-        if (event.key=="Enter"){
-            $("#txtCusAddress").focus();
+        if (isMatchCustomerName) {
+            $("#txtCusAddress").css('border','2px solid red');
+            $('#addressError').text("wrong format : a-z or A-Z");
+            if (event.key == "Enter") {
+                $("#txtCusAddress").focus();
+            }
         }
     });
 
     $("#txtCusAddress").keydown(function (event){
-        if (event.key=="Enter"){
-            $("#txtCusSalary").focus();
+        if (isMatchCustomerAddress) {
+            $('#txtCusSalary').css('border','2px solid red');
+            $('#salaryError').text("wrong format : 100.00 or 100");
+            if (event.key == "Enter") {
+                $("#txtCusSalary").focus();
+            }
         }
     });
 
     $('#txtCusSalary').keydown(function (event){
-        if (event.key=="Enter"){
-            $('#CbtnSaveCustomer').focus();
+        if (isMatchCustomerSalary) {
+            if (event.key == "Enter") {
+                $('#CbtnSaveCustomer').focus();
+            }
         }
     });
 
