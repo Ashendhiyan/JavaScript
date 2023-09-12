@@ -1107,6 +1107,20 @@
         }
     });
 
+
+    var regExItemQty = /^[0-9]{1,5}$/
+
+    $("#item-qty").keyup(function (){
+        var qty = $("#item-qty").val();
+        if (regExItemQty.test(qty)){
+            $("#item-qty").css("border","2px solid green");
+            $("#itemQtyError").text("");
+        }else {
+            $("#item-qty").css("border","2px solid red");
+            $("#itemQtyError").text("wrong format : 0-9 ");
+        }
+    });
+
     //========================================================================================================
     //========================================================================================================
 
