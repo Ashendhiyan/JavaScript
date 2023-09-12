@@ -889,63 +889,10 @@
 
     /* ==================================add customer======================== */
 
-    $("#CbtnSaveCustomer").on("click",function () {
-
-        //remove all the row events
-        $("#CtblCustomer>tr").off();
-
-
-        // gather customer information
-
-        var CusTableId = $("#txtCusId").val();
-        var CusTableName = $("#txtCusName").val();
-        var CusTableAddress = $("#txtCusAddress").val();
-        var CusTableSalary = $("#txtCusSalary").val();
-
-
-        console.log(CusTableId,CusTableName,CusTableAddress,CusTableSalary);
-        console.log(typeof CusTableId,typeof CusTableName,typeof CusTableAddress,typeof CusTableSalary);
-
-        // create a html row
-        let row = `<tr><td>${CusTableId}</td><td>${CusTableName}</td><td>${CusTableAddress}</td><td>${CusTableSalary}</td></tr>`;
-
-        //select the table body and append the row
-        $("#CtblCustomer").append(row);
-        alert("Customer saved..!");
-
-
-        // bind the event after  the raw was aded
-        $("#CtblCustomer>tr").click(function () {
-
-            //this       //dom object
-            //$(this)   //jQuery object
-
-
-            let customId =  $(this).children(':nth-child(1)').text();
-            let customName = $(this).children(':nth-child(2)').text();
-            let customAddress = $(this).children(':nth-child(3)').text();
-            let customSalary = $(this).children(':nth-child(4)').text();
-
-
-            console.log(customId,customName,customAddress,customSalary);
-
-            $("#CusId").val(customId);
-            $("#CusName").val(customName);
-            $("#CusAddress").val(customAddress);
-            $("#CusSalary").val(customSalary);
-
-        });
-
-        // double click to remove customer
-
-        $("#CtblCustomer>tr").dblclick(function (){
-           // alert("clicked");
-            $(this).remove()
-
-        });
-
-    });
-
+    var isMatchCustomerId = false;
+    var isMatchCustomerName = false;
+    var isMatchCustomerAddress = false;
+    var isMatchCustomerSalary = false;
 
     // regular expression
 
@@ -957,9 +904,11 @@
         if (regExCusID.test(val)){
             $('#txtCusId').css('border','2px solid green')
             $('#error').text("");
+            isMatchCustomerId  = true;
         }else {
             $('#txtCusId').css("border","2px solid red");
             $('#error').text("wrong format : C00-001");
+            isMatchCustomerId  = false;
         }
     });
 
@@ -971,9 +920,11 @@
         if (regExCusName.test(name)){
             $("#txtCusName").css("border","2px solid green");
             $("#nameError").text("");
+            isMatchCustomerName  = true;
         }else {
             $("#txtCusName").css("border","2px solid red");
             $("#nameError").text("wrong format : A-Z or a-z");
+            isMatchCustomerName  = false;
         }
     });
 
@@ -985,9 +936,11 @@
         if (regExAddress.test(address)){
             $("#txtCusAddress").css('border','2px solid green');
             $('#addressError').text("");
+            isMatchCustomerAddress  = true;
         }else {
             $("#txtCusAddress").css('border','2px solid red');
             $('#addressError').text("wrong format : a-z or A-Z");
+            isMatchCustomerAddress  = false;
         }
     });
 
@@ -1001,10 +954,77 @@
         if (regExSalary.test(salary)){
             $('#txtCusSalary').css('border','2px solid green');
             $('#salaryError').text("");
+            isMatchCustomerSalary  = true;
         }else{
             $('#txtCusSalary').css('border','2px solid red');
             $('#salaryError').text("wrong format : 100.00 or 100");
+            isMatchCustomerSalary  = false;
         }
+    });
+
+
+    $("#CbtnSaveCustomer").on("click",function () {
+
+        //remove all the row events
+        $("#CtblCustomer>tr").off();
+
+
+        // gather customer information
+
+        if (!isMatchCustomerId){
+        }else if (!isMatchCustomerName){
+        }else if (!isMatchCustomerAddress){
+        }else if (!isMatchCustomerSalary){
+        }else {
+
+            var CusTableId = $("#txtCusId").val();
+            var CusTableName = $("#txtCusName").val();
+            var CusTableAddress = $("#txtCusAddress").val();
+            var CusTableSalary = $("#txtCusSalary").val();
+
+
+            console.log(CusTableId,CusTableName,CusTableAddress,CusTableSalary);
+            console.log(typeof CusTableId,typeof CusTableName,typeof CusTableAddress,typeof CusTableSalary);
+
+            // create a html row
+            let row = `<tr><td>${CusTableId}</td><td>${CusTableName}</td><td>${CusTableAddress}</td><td>${CusTableSalary}</td></tr>`;
+
+            //select the table body and append the row
+            $("#CtblCustomer").append(row);
+            alert("Customer saved..!");
+
+
+            // bind the event after  the raw was aded
+            $("#CtblCustomer>tr").click(function () {
+
+                //this       //dom object
+                //$(this)   //jQuery object
+
+
+                let customId =  $(this).children(':nth-child(1)').text();
+                let customName = $(this).children(':nth-child(2)').text();
+                let customAddress = $(this).children(':nth-child(3)').text();
+                let customSalary = $(this).children(':nth-child(4)').text();
+
+
+                console.log(customId,customName,customAddress,customSalary);
+
+                $("#CusId").val(customId);
+                $("#CusName").val(customName);
+                $("#CusAddress").val(customAddress);
+                $("#CusSalary").val(customSalary);
+
+            });
+
+            // double click to remove customer
+
+            $("#CtblCustomer>tr").dblclick(function (){
+                // alert("clicked");
+                $(this).remove()
+
+            });
+        }
+        alert("Failed..!")
     });
 
 
