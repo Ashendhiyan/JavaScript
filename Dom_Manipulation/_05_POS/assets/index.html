@@ -1024,7 +1024,7 @@
 
             });
         }
-        alert("Failed..!")
+
     });
 
 
@@ -1059,43 +1059,10 @@
 
     /* add item */
 
-    $("#itemSaveButton").click(function () {
-
-
-        $("#tblItem>tr").off("click");
-
-        var itemTblCode = $('#item-code').val();
-        var itemTblName = $('#item-name').val();
-        var itemTblQty = $('#item-qty').val();
-        var itemTblPrice = $('#item-pricee').val();
-
-
-        console.log(itemTblCode,itemTblName,itemTblQty,itemTblPrice);
-        console.log(typeof itemTblCode,typeof itemTblName,typeof itemTblQty,typeof itemTblPrice);
-
-        var itemRow = `<tr><td>${itemTblCode}</td><td>${itemTblName}</td><td>${itemTblQty}</td><td>${itemTblPrice}</td></tr>`
-
-        $('#tblItem').append(itemRow);
-        alert("Item saved..!");
-
-        $('#tblItem>tr').click(function () {
-            var itemcode = $(this).children(':eq(0)').text();
-            var itemName = $(this).children(':eq(1)').text();
-            var itemQty = $(this).children(':eq(2)').text();
-            var itemPrice = $(this).children(':eq(3)').text();
-
-            console.log(itemcode,itemName,itemQty,itemPrice);
-
-
-            $('#IitemId').val(itemcode);
-            $('#itemName').val(itemName);
-            $('#QqtyOnHand').val(itemQty);
-            $('#Pprice').val(itemPrice);
-
-        });
-
-    });
-
+    var isMatchItemCode = false;
+    var isMatchItemName = false;
+    var isMatchItemQty = false;
+    var isMatchItemPrice = false;
 
     // regular expression
 
@@ -1106,9 +1073,11 @@
         if (regExCode.test(code)){
             $("#item-code").css("border","2px solid green");
             $("#itemCodeError").text("");
+            isMatchItemCode = true;
         }else {
             $("#item-code").css("border","2px solid red");
             $("#itemCodeError").text("wrong format : P00-001 ");
+            isMatchItemCode = false;
         }
     });
 
@@ -1121,9 +1090,11 @@
         if (regExItemName.test(name)){
             $("#item-name").css("border","2px solid green");
             $("#itemNameError").text("");
+            isMatchItemName = true;
         }else {
             $("#item-name").css("border","2px solid red");
             $("#itemNameError").text("wrong format : a-z or A-z ");
+            isMatchItemName = false;
         }
     });
 
@@ -1135,9 +1106,11 @@
         if (regExItemQty.test(qty)){
             $("#item-qty").css("border","2px solid green");
             $("#itemQtyError").text("");
+            isMatchItemQty = true;
         }else {
             $("#item-qty").css("border","2px solid red");
             $("#itemQtyError").text("wrong format : 0-9 ");
+            isMatchItemQty = false;
         }
     });
 
@@ -1149,12 +1122,54 @@
         if (regExPrice.test(price)){
             $("#item-pricee").css("border","2px solid green");
             $("#itemPriceError").text("");
+            isMatchItemPrice = true;
         }else {
             $("#item-pricee").css("border","2px solid red");
             $("#itemPriceError").text("wrong format : 100 or  100.00 ");
+            isMatchItemPrice = false;
         }
     });
 
+    $("#itemSaveButton").click(function () {
+
+        if (!isMatchItemCode){
+        }else if (!isMatchItemName){
+        }else if (!isMatchItemQty){
+        }else if (!isMatchItemPrice){
+        }else {
+            $("#tblItem>tr").off("click");
+
+            var itemTblCode = $('#item-code').val();
+            var itemTblName = $('#item-name').val();
+            var itemTblQty = $('#item-qty').val();
+            var itemTblPrice = $('#item-pricee').val();
+
+
+            console.log(itemTblCode,itemTblName,itemTblQty,itemTblPrice);
+            console.log(typeof itemTblCode,typeof itemTblName,typeof itemTblQty,typeof itemTblPrice);
+
+            var itemRow = `<tr><td>${itemTblCode}</td><td>${itemTblName}</td><td>${itemTblQty}</td><td>${itemTblPrice}</td></tr>`
+
+            $('#tblItem').append(itemRow);
+            alert("Item saved..!");
+
+            $('#tblItem>tr').click(function () {
+                var itemcode = $(this).children(':eq(0)').text();
+                var itemName = $(this).children(':eq(1)').text();
+                var itemQty = $(this).children(':eq(2)').text();
+                var itemPrice = $(this).children(':eq(3)').text();
+
+                console.log(itemcode,itemName,itemQty,itemPrice);
+
+
+                $('#IitemId').val(itemcode);
+                $('#itemName').val(itemName);
+                $('#QqtyOnHand').val(itemQty);
+                $('#Pprice').val(itemPrice);
+
+            });
+        }
+    });
 
     //========================================================================================================
     //========================================================================================================
