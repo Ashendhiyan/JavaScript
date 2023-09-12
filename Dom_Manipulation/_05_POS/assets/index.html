@@ -464,18 +464,22 @@
                                     <div>
                                         <label class="col-form-label" for="item-code">Item Code:</label>
                                         <input class="form-control" id="item-code" type="text">
+                                        <p><small id="itemCodeError" class="text-danger"></small></p>
                                     </div>
                                     <div>
                                         <label class="col-form-label" for="item-name">Item Name:</label>
                                         <input class="form-control" id="item-name" type="text">
+                                        <p><small id="itemNameError" class="text-danger"></small></p>
                                     </div>
                                     <div>
                                         <label class="col-form-label" for="item-qty">Quantity:</label>
                                         <input class="form-control" id="item-qty" type="text">
+                                        <p><small id="itemQtyError" class="text-danger"></small></p>
                                     </div>
                                     <div>
                                         <label class="col-form-label" for="item-pricee">Item price:</label>
                                         <input class="form-control" id="item-pricee" type="text">
+                                        <p><small id="itemPriceError" class="text-danger"></small></p>
                                     </div>
                                 </form>
                             </div>
@@ -1070,6 +1074,22 @@
 
         });
 
+    });
+
+
+    // regular expression
+
+    var regExCode = /^(P00-)[0-9]{3,5}$/;
+
+    $("#item-code").keyup(function (){
+        var code = $("#item-code").val();
+        if (regExCode.test(code)){
+            $("#item-code").css("border","2px solid green");
+            $("#itemCodeError").text("");
+        }else {
+            $("#item-code").css("border","2px solid red");
+            $("#itemCodeError").text("wrong format : P00-001 ");
+        }
     });
 
 
