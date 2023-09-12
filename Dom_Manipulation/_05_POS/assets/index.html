@@ -29,13 +29,13 @@
                             <a aria-current="page" class="nav-link active" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="linkOrder" href="#">Order</a>
+                            <a class="nav-link" href="#" id="linkOrder">Order</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="linkItem" href="#">Item</a>
+                            <a class="nav-link" href="#" id="linkItem">Item</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="linkCustomer" href="#">Customer</a>
+                            <a class="nav-link" href="#" id="linkCustomer">Customer</a>
                         </li>
                     </ul>
 
@@ -53,7 +53,7 @@
 </header>
 
 <!--Site Body-->
-<main id="DashboardContent" class="container position-relative">
+<main class="container position-relative" id="DashboardContent">
 
     <!--Head/Dashboard Title-->
     <div>
@@ -72,7 +72,7 @@
         <div class="row">
             <!--Selector field-->
             <div class="col-5 col-sm-3 col-lg-2">
-                <select class="form-select form-select-ls mt-4" aria-label=".form-select-lg example">
+                <select aria-label=".form-select-lg example" class="form-select form-select-ls mt-4">
                     <option selected>ID</option>
                     <option value="1">Name</option>
                     <option value="2">Date</option>
@@ -82,7 +82,7 @@
             <!--Search bar with button-->
             <div class="col-12 col-sm-9 col-lg-10">
                 <form class="d-flex mt-3 mt-sm-4">
-                    <input class="form-control me-2" type="search" placeholder="Search Item" aria-label="Search">
+                    <input aria-label="Search" class="form-control me-2" placeholder="Search Item" type="search">
                     <button class="btn btn-outline-primary" type="submit">Search
                     </button>
                 </form>
@@ -97,21 +97,21 @@
                 <div class="row gx-3">
                     <div class="col-5 col-lg col-sm-6 ">
                         <div class="mb-4">
-                            <label for="OorderId" class="form-label">Order ID</label>
-                            <input type="text" class="form-control" id="OorderId" placeholder="O001" disabled>
+                            <label class="form-label" for="OorderId">Order ID</label>
+                            <input class="form-control" disabled id="OorderId" placeholder="O001" type="text">
                         </div>
                     </div>
                     <div class="col-7 col-lg  col-sm-6">
                         <div class="mb-4">
-                            <label for="OorderDate" class="form-label">Date</label>
-                            <input type="date" class="form-control" id="OorderDate" disabled>
+                            <label class="form-label" for="OorderDate">Date</label>
+                            <input class="form-control" disabled id="OorderDate" type="date">
                         </div>
                     </div>
 
                     <div class="col col-lg col-sm-12 ">
                         <div class="mb-4">
-                            <label for="CcustomerName" class="form-label">Customer Name</label>
-                            <input type="text" class="form-control" id="CcustomerName" placeholder="Dasun" disabled>
+                            <label class="form-label" for="CcustomerName">Customer Name</label>
+                            <input class="form-control" disabled id="CcustomerName" placeholder="Dasun" type="text">
                         </div>
                     </div>
 
@@ -121,14 +121,14 @@
                 <div class="row gx-3">
                     <div class="col">
                         <div class="mb-2">
-                            <label for="Ddiscount" class="form-label">Discount</label>
-                            <input type="text" class="form-control" id="Ddiscount" placeholder="00.00" disabled>
+                            <label class="form-label" for="Ddiscount">Discount</label>
+                            <input class="form-control" disabled id="Ddiscount" placeholder="00.00" type="text">
                         </div>
                     </div>
                     <div class="col">
                         <div class="mb-2">
-                            <label for="cost" class="form-label">Cost</label>
-                            <input type="text" class="form-control" id="cost" placeholder="0000.00" disabled>
+                            <label class="form-label" for="cost">Cost</label>
+                            <input class="form-control" disabled id="cost" placeholder="0000.00" type="text">
                         </div>
                     </div>
                 </div>
@@ -136,8 +136,8 @@
                 <!--Third Row/Button-->
                 <div class="row">
                     <div class=" gap-2 d-flex justify-content-center justify-content-md-end justify-content-sm-center  mt-4">
-                        <button type="button" class="btn btn-secondary">Clear</button>
-                        <button type="button" class="btn btn-danger">Delete</button>
+                        <button class="btn btn-secondary" type="button">Clear</button>
+                        <button class="btn btn-danger" type="button">Delete</button>
                     </div>
                 </div>
             </div>
@@ -215,7 +215,7 @@
 
 <!--Customer-->
 <!--======Main Body======-->
-<main id="CustomerContent" class="container position-relative">
+<main class="container position-relative" id="CustomerContent">
 
     <!--customer title-->
     <div>
@@ -239,9 +239,9 @@
             <!--Search Bar with Button-->
             <div class="col-12 col-xl col-sm-9 col-md-6 col-lg">
                 <form class="d-flex mt-3 mt-sm-4 mt-lg-4">
-                    <input id="CinputCusSearch" aria-label="Search" class="form-control me-2"
+                    <input aria-label="Search" class="form-control me-2" id="CinputCusSearch"
                            placeholder="Search Customer" type="search">
-                    <button id="CbtnSearchButton" class="btn btn-outline-primary" type="button">Search</button>
+                    <button class="btn btn-outline-primary" id="CbtnSearchButton" type="button">Search</button>
                 </form>
             </div>
 
@@ -278,22 +278,22 @@
                                     <div>
                                         <label class="col-form-label" for="txtCusId">Customer ID:</label>
                                         <input class="form-control" id="txtCusId" type="text">
-                                        <p><small id="error" class="text-danger"></small></p>
+                                        <p><small class="text-danger" id="error"></small></p>
                                     </div>
                                     <div>
                                         <label class="col-form-label" for="txtCusName">Customer Name:</label>
                                         <input class="form-control" id="txtCusName" type="text">
-                                        <p><small id="nameError" class="text-danger"></small></p>
+                                        <p><small class="text-danger" id="nameError"></small></p>
                                     </div>
                                     <div>
                                         <label class="col-form-label" for="txtCusAddress">Address:</label>
                                         <input class="form-control" id="txtCusAddress" type="text">
-                                        <p><small id="addressError" class="text-danger"></small></p>
+                                        <p><small class="text-danger" id="addressError"></small></p>
                                     </div>
                                     <div>
                                         <label class="col-form-label" for="txtCusSalary">Salary:</label>
                                         <input class="form-control" id="txtCusSalary" type="text">
-                                        <p><small id="salaryError" class="text-danger"></small></p>
+                                        <p><small class="text-danger" id="salaryError"></small></p>
                                     </div>
                                 </form>
                             </div>
@@ -301,7 +301,7 @@
                             <!--Message Box Footer/buttons-->
                             <div class="modal-footer">
                                 <button class="btn btn-secondary" data-bs-dismiss="modal" type="button">Close</button>
-                                <button id="CbtnSaveCustomer" class="btn btn-primary" type="button">Save</button>
+                                <button class="btn btn-primary" id="CbtnSaveCustomer" type="button">Save</button>
                             </div>
 
                         </div>
@@ -321,7 +321,7 @@
                     <div class="col-5 col-sm-5 col-lg">
                         <div class="mb-4">
                             <label class="form-label" for="CusId">Customer ID</label>
-                            <input class="form-control" disabled id="CusId"  type="text">
+                            <input class="form-control" disabled id="CusId" type="text">
                         </div>
                     </div>
 
@@ -398,7 +398,7 @@
 </main>
 
 <!--item-->
-<main id="itemContent" class="container position-relative">
+<main class="container position-relative" id="itemContent">
     <!--customer title-->
     <div>
         <div class="row ">
@@ -417,7 +417,7 @@
 
             <!--Selector Field-->
             <div class="col-5 col-xl-2 col-sm-3 col-md-2 col-lg-2">
-                <select id="itemCombo" aria-label=".form-select-lg example" class="form-select form-select-ls  mt-4">
+                <select aria-label=".form-select-lg example" class="form-select form-select-ls  mt-4" id="itemCombo">
                     <option selected>ID</option>
                     <option value="1">Name</option>
                 </select>
@@ -426,9 +426,9 @@
             <!--Search Bar with Button-->
             <div class="col-12 col-xl col-sm-9 col-md-6 col-lg">
                 <form class="d-flex mt-3 mt-sm-4 mt-lg-4">
-                    <input id="inputItemSearch" aria-label="Search" class="form-control me-2" placeholder="Search Item"
+                    <input aria-label="Search" class="form-control me-2" id="inputItemSearch" placeholder="Search Item"
                            type="search">
-                    <button id="btnItemSearchButton" class="btn btn-outline-primary" type="button">Search</button>
+                    <button class="btn btn-outline-primary" id="btnItemSearchButton" type="button">Search</button>
                 </form>
             </div>
 
@@ -464,22 +464,22 @@
                                     <div>
                                         <label class="col-form-label" for="item-code">Item Code:</label>
                                         <input class="form-control" id="item-code" type="text">
-                                        <p><small id="itemCodeError" class="text-danger"></small></p>
+                                        <p><small class="text-danger" id="itemCodeError"></small></p>
                                     </div>
                                     <div>
                                         <label class="col-form-label" for="item-name">Item Name:</label>
                                         <input class="form-control" id="item-name" type="text">
-                                        <p><small id="itemNameError" class="text-danger"></small></p>
+                                        <p><small class="text-danger" id="itemNameError"></small></p>
                                     </div>
                                     <div>
                                         <label class="col-form-label" for="item-qty">Quantity:</label>
                                         <input class="form-control" id="item-qty" type="text">
-                                        <p><small id="itemQtyError" class="text-danger"></small></p>
+                                        <p><small class="text-danger" id="itemQtyError"></small></p>
                                     </div>
                                     <div>
                                         <label class="col-form-label" for="item-pricee">Item price:</label>
                                         <input class="form-control" id="item-pricee" type="text">
-                                        <p><small id="itemPriceError" class="text-danger"></small></p>
+                                        <p><small class="text-danger" id="itemPriceError"></small></p>
                                     </div>
                                 </form>
                             </div>
@@ -487,7 +487,7 @@
                             <!--Message Footer/Button-->
                             <div class="modal-footer">
                                 <button class="btn btn-secondary" data-bs-dismiss="modal" type="button">Close</button>
-                                <button id="itemSaveButton" class="btn btn-primary" type="button">Save</button>
+                                <button class="btn btn-primary" id="itemSaveButton" type="button">Save</button>
                             </div>
                         </div>
                     </div>
@@ -509,28 +509,28 @@
                 <div class="col-5 col-sm-5 col-lg">
                     <div class="mb-4">
                         <label class="form-label" for="IitemId">Item Code</label>
-                        <input class="form-control" disabled id="IitemId"  type="text">
+                        <input class="form-control" disabled id="IitemId" type="text">
                     </div>
                 </div>
                 <!--Name-->
                 <div class="col-7 col-sm-7 col-lg">
                     <div class="mb-4">
                         <label class="form-label" for="itemName">Name</label>
-                        <input class="form-control" disabled id="itemName"  type="text">
+                        <input class="form-control" disabled id="itemName" type="text">
                     </div>
                 </div>
                 <!--QTY-->
                 <div class="col col-lg">
                     <div class="mb-2">
                         <label class="form-label" for="QqtyOnHand">Quantity</label>
-                        <input class="form-control" disabled id="QqtyOnHand"  type="text">
+                        <input class="form-control" disabled id="QqtyOnHand" type="text">
                     </div>
                 </div>
                 <!--UP-->
                 <div class="col col-lg">
                     <div class="mb-2">
                         <label class="form-label" for="Pprice">Unit Price</label>
-                        <input class="form-control" disabled id="Pprice"  type="text">
+                        <input class="form-control" disabled id="Pprice" type="text">
                     </div>
                 </div>
 
@@ -587,7 +587,7 @@
 </main>
 
 <!--order Form-->
-<main id="OrderContent" class="container position-relative">
+<main class="container position-relative" id="OrderContent">
     <!--Place Order Title-->
     <div>
         <div class="row ">
@@ -614,42 +614,42 @@
                         <div class="row gx-3">
                             <div class="col">
                                 <div class="mb-lg-4 mb-sm-3 mb-3">
-                                    <label for="orderId" class="form-label">Order ID</label>
-                                    <input type="text" class="form-control" id="orderId" placeholder="O001">
+                                    <label class="form-label" for="orderId">Order ID</label>
+                                    <input class="form-control" id="orderId" placeholder="O001" type="text">
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="mb-lg-4 mb-sm-3 mb-3">
-                                    <label for="OrderDate" class="form-label">Date</label>
-                                    <input type="date" class="form-control" id="OrderDate">
+                                    <label class="form-label" for="OrderDate">Date</label>
+                                    <input class="form-control" id="OrderDate" type="date">
                                 </div>
                             </div>
                         </div>
                         <div class="row gx-3">
                             <div class="col">
                                 <div class="mb-lg-4 mb-sm-3 mb-3">
-                                    <label for="customerId" class="form-label">Customer ID</label>
-                                    <select class="form-select form-select-ls" id="customerId"
-                                            aria-label=".form-select-lg example">
+                                    <label class="form-label" for="customerId">Customer ID</label>
+                                    <select aria-label=".form-select-lg example" class="form-select form-select-ls"
+                                            id="customerId">
                                         <option selected>C001</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="mb-lg-4 mb-sm-3 mb-3">
-                                    <label for="customerName" class="form-label">Customer</label>
-                                    <input type="text" class="form-control" id="customerName" placeholder="Ashen">
+                                    <label class="form-label" for="customerName">Customer</label>
+                                    <input class="form-control" id="customerName" placeholder="Ashen" type="text">
                                 </div>
                             </div>
                         </div>
                         <div class="row gx-3">
                             <div class="mb-lg-4 mb-sm-3 mb-3">
-                                <label for="salary" class="form-label">Salary</label>
-                                <input type="text" class="form-control" id="salary" placeholder="0000.00">
+                                <label class="form-label" for="salary">Salary</label>
+                                <input class="form-control" id="salary" placeholder="0000.00" type="text">
                             </div>
                             <div class="mb-lg-4 mb-md-5 ">
-                                <label for="address" class="form-label">Address</label>
-                                <input type="text" class="form-control" id="address" placeholder="Kalutara">
+                                <label class="form-label" for="address">Address</label>
+                                <input class="form-control" id="address" placeholder="Kalutara" type="text">
                             </div>
                         </div>
                     </div>
@@ -668,41 +668,41 @@
                         <div class="row gx-3">
                             <div class="col">
                                 <div class="mb-4">
-                                    <label for="itemId" class="form-label">Item ID</label>
-                                    <select class="form-select form-select-ls" id="itemId"
-                                            aria-label=".form-select-lg example">
+                                    <label class="form-label" for="itemId">Item ID</label>
+                                    <select aria-label=".form-select-lg example" class="form-select form-select-ls"
+                                            id="itemId">
                                         <option selected>P001</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="mb-4">
-                                    <label for="item" class="form-label">Item</label>
-                                    <input type="text" class="form-control" id="item" placeholder="Sunlight">
+                                    <label class="form-label" for="item">Item</label>
+                                    <input class="form-control" id="item" placeholder="Sunlight" type="text">
                                 </div>
                             </div>
                         </div>
                         <div class="row gx-3">
                             <div class="col">
                                 <div class="mb-4">
-                                    <label for="price" class="form-label">Price</label>
-                                    <input type="text" class="form-control" id="price" placeholder="0000.00">
+                                    <label class="form-label" for="price">Price</label>
+                                    <input class="form-control" id="price" placeholder="0000.00" type="text">
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="mb-5">
-                                    <label for="qtyOnHand" class="form-label">QyOnHand</label>
-                                    <input type="number" class="form-control" id="qtyOnHand" placeholder="10">
+                                    <label class="form-label" for="qtyOnHand">QyOnHand</label>
+                                    <input class="form-control" id="qtyOnHand" placeholder="10" type="number">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="mb-lg-2 mb-md-2 mb-sm-5">
-                                <label for="orderQty" class="form-label">Order Quantity</label>
-                                <input type="number" class="form-control" id="orderQty" placeholder="00">
+                                <label class="form-label" for="orderQty">Order Quantity</label>
+                                <input class="form-control" id="orderQty" placeholder="00" type="number">
                             </div>
                             <div class="mt-5 d-grid  col-6 mx-auto">
-                                <button type="button" class="btn btn-primary">Add Item</button>
+                                <button class="btn btn-primary" type="button">Add Item</button>
                             </div>
                         </div>
                     </div>
@@ -721,12 +721,12 @@
                         <div class="row px-lg-0 px-xxl-4 px-sm-5 mt-0 mt-lg-2 mt-xl-1 mt-xxl-3 ">
                             <div class="col-5">
                                 <div class="mb-2 mb-lg-3 mb-xxl-3">
-                                    <label for="total" class="form-label fs-5">Total(RS)</label>
+                                    <label class="form-label fs-5" for="total">Total(RS)</label>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="mb-2">
-                                    <input type="number" readonly class="form-control p-1 fs-6 fw-bolder " id="total"
+                                    <input class="form-control p-1 fs-6 fw-bolder " id="total" readonly type="number"
                                            value="00000.00">
                                 </div>
                             </div>
@@ -735,12 +735,12 @@
                         <div class="row px-lg-0 px-sm-5 px-xxl-4">
                             <div class="col-5">
                                 <div class="mb-2">
-                                    <label for="subTotal" class="form-label fs-5">Sub Total(RS)</label>
+                                    <label class="form-label fs-5" for="subTotal">Sub Total(RS)</label>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="mb-2">
-                                    <input type="number" readonly class="form-control p-1 fs-6 fw-bolder " id="subTotal"
+                                    <input class="form-control p-1 fs-6 fw-bolder " id="subTotal" readonly type="number"
                                            value="00000.00">
                                 </div>
                             </div>
@@ -749,24 +749,24 @@
                         <div class="row gx-3 mt-4">
                             <div class="col">
                                 <div class="mb-3">
-                                    <label for="cash" class="form-label">Cash</label>
-                                    <input type="text" class="form-control" id="cash" placeholder="0000.00">
+                                    <label class="form-label" for="cash">Cash</label>
+                                    <input class="form-control" id="cash" placeholder="0000.00" type="text">
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="mb-3 mb-xxl-4">
-                                    <label for="discount" class="form-label">Discount</label>
-                                    <input type="number" class="form-control" id="discount" placeholder="10">
+                                    <label class="form-label" for="discount">Discount</label>
+                                    <input class="form-control" id="discount" placeholder="10" type="number">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="mb-3 mb-xl-5 mb-xxl-4">
-                                <label for="balance" class="form-label">Balance</label>
-                                <input type="text" class="form-control" id="balance" placeholder="0000.00">
+                                <label class="form-label" for="balance">Balance</label>
+                                <input class="form-control" id="balance" placeholder="0000.00" type="text">
                             </div>
                             <div class="mt-1 d-grid col-6 mt-xl-2 mx-auto">
-                                <button type="button" class="btn btn-primary">Purchase</button>
+                                <button class="btn btn-primary" type="button">Purchase</button>
                             </div>
                         </div>
                     </div>
@@ -862,19 +862,19 @@
     /*add customer events*/
 
 
-    $("#txtCusId").keydown(function (event){
-        if (isMatchCustomerId){
-            $("#txtCusName").css("border","2px solid red");
+    $("#txtCusId").keydown(function (event) {
+        if (isMatchCustomerId) {
+            $("#txtCusName").css("border", "2px solid red");
             $("#nameError").text("Wrong format : a-z or A-Z");
-            if (event.key=="Enter"){
+            if (event.key == "Enter") {
                 $("#txtCusName").focus();
             }
         }
     });
 
-    $("#txtCusName").keydown(function (event){
+    $("#txtCusName").keydown(function (event) {
         if (isMatchCustomerName) {
-            $("#txtCusAddress").css('border','2px solid red');
+            $("#txtCusAddress").css('border', '2px solid red');
             $('#addressError').text("wrong format : a-z or A-Z");
             if (event.key == "Enter") {
                 $("#txtCusAddress").focus();
@@ -882,9 +882,9 @@
         }
     });
 
-    $("#txtCusAddress").keydown(function (event){
+    $("#txtCusAddress").keydown(function (event) {
         if (isMatchCustomerAddress) {
-            $('#txtCusSalary').css('border','2px solid red');
+            $('#txtCusSalary').css('border', '2px solid red');
             $('#salaryError').text("wrong format : 100.00 or 100");
             if (event.key == "Enter") {
                 $("#txtCusSalary").focus();
@@ -892,7 +892,7 @@
         }
     });
 
-    $('#txtCusSalary').keydown(function (event){
+    $('#txtCusSalary').keydown(function (event) {
         if (isMatchCustomerSalary) {
             if (event.key == "Enter") {
                 $('#CbtnSaveCustomer').focus();
@@ -913,71 +913,69 @@
 
     var regExCusID = /^(C00-)[0-9]{3,4}$/
 
-    $('#txtCusId').keyup(function (){
+    $('#txtCusId').keyup(function () {
         var val = $('#txtCusId').val();
-        if (regExCusID.test(val)){
-            $('#txtCusId').css('border','2px solid green')
+        if (regExCusID.test(val)) {
+            $('#txtCusId').css('border', '2px solid green')
             $('#error').text("");
-            isMatchCustomerId  = true;
-        }else {
-            $('#txtCusId').css("border","2px solid red");
+            isMatchCustomerId = true;
+        } else {
+            $('#txtCusId').css("border", "2px solid red");
             $('#error').text("wrong format : C00-001");
-            isMatchCustomerId  = false;
+            isMatchCustomerId = false;
         }
     });
 
 
     var regExCusName = /^[a-zA-Z]{3,15}$/
 
-    $("#txtCusName").keyup(function (){
+    $("#txtCusName").keyup(function () {
         var name = $("#txtCusName").val();
-        if (regExCusName.test(name)){
-            $("#txtCusName").css("border","2px solid green");
+        if (regExCusName.test(name)) {
+            $("#txtCusName").css("border", "2px solid green");
             $("#nameError").text("");
-            isMatchCustomerName  = true;
-        }else {
-            $("#txtCusName").css("border","2px solid red");
+            isMatchCustomerName = true;
+        } else {
+            $("#txtCusName").css("border", "2px solid red");
             $("#nameError").text("wrong format : A-Z or a-z");
-            isMatchCustomerName  = false;
+            isMatchCustomerName = false;
         }
     });
 
 
     var regExAddress = /^[a-zA-Z]{3,25}$/;
 
-    $("#txtCusAddress").keyup(function (){
+    $("#txtCusAddress").keyup(function () {
         var address = $("#txtCusAddress").val();
-        if (regExAddress.test(address)){
-            $("#txtCusAddress").css('border','2px solid green');
+        if (regExAddress.test(address)) {
+            $("#txtCusAddress").css('border', '2px solid green');
             $('#addressError').text("");
-            isMatchCustomerAddress  = true;
-        }else {
-            $("#txtCusAddress").css('border','2px solid red');
+            isMatchCustomerAddress = true;
+        } else {
+            $("#txtCusAddress").css('border', '2px solid red');
             $('#addressError').text("wrong format : a-z or A-Z");
-            isMatchCustomerAddress  = false;
+            isMatchCustomerAddress = false;
         }
     });
-
-
 
 
     var regExSalary = /^[0-9.]{2,10}$/;
 
-    $("#txtCusSalary").keyup(function (){
+    $("#txtCusSalary").keyup(function () {
         var salary = $("#txtCusSalary").val();
-        if (regExSalary.test(salary)){
-            $('#txtCusSalary').css('border','2px solid green');
+        if (regExSalary.test(salary)) {
+            $('#txtCusSalary').css('border', '2px solid green');
             $('#salaryError').text("");
-            isMatchCustomerSalary  = true;
-        }else{
-            $('#txtCusSalary').css('border','2px solid red');
+            isMatchCustomerSalary = true;
+        } else {
+            $('#txtCusSalary').css('border', '2px solid red');
             $('#salaryError').text("wrong format : 100.00 or 100");
-            isMatchCustomerSalary  = false;
+            isMatchCustomerSalary = false;
         }
     });
 
 
-    $("#CbtnSaveCustomer").on("click",function () {
+    $("#CbtnSaveCustomer").on("click", function () {
 
         //remove all the row events
         $("#CtblCustomer>tr").off();
@@ -985,11 +983,11 @@
 
         // gather customer information
 
-        if (!isMatchCustomerId){
-        }else if (!isMatchCustomerName){
-        }else if (!isMatchCustomerAddress){
-        }else if (!isMatchCustomerSalary){
-        }else {
+        if (!isMatchCustomerId) {
+        } else if (!isMatchCustomerName) {
+        } else if (!isMatchCustomerAddress) {
+        } else if (!isMatchCustomerSalary) {
+        } else {
 
             var CusTableId = $("#txtCusId").val();
             var CusTableName = $("#txtCusName").val();
@@ -997,8 +995,8 @@
             var CusTableSalary = $("#txtCusSalary").val();
 
 
-            console.log(CusTableId,CusTableName,CusTableAddress,CusTableSalary);
-            console.log(typeof CusTableId,typeof CusTableName,typeof CusTableAddress,typeof CusTableSalary);
+            console.log(CusTableId, CusTableName, CusTableAddress, CusTableSalary);
+            console.log(typeof CusTableId, typeof CusTableName, typeof CusTableAddress, typeof CusTableSalary);
 
             // create a html row
             let row = `<tr><td>${CusTableId}</td><td>${CusTableName}</td><td>${CusTableAddress}</td><td>${CusTableSalary}</td></tr>`;
@@ -1015,13 +1013,13 @@
                 //$(this)   //jQuery object
 
 
-                let customId =  $(this).children(':nth-child(1)').text();
+                let customId = $(this).children(':nth-child(1)').text();
                 let customName = $(this).children(':nth-child(2)').text();
                 let customAddress = $(this).children(':nth-child(3)').text();
                 let customSalary = $(this).children(':nth-child(4)').text();
 
 
-                console.log(customId,customName,customAddress,customSalary);
+                console.log(customId, customName, customAddress, customSalary);
 
                 $("#CusId").val(customId);
                 $("#CusName").val(customName);
@@ -1032,7 +1030,7 @@
 
             // double click to remove customer
 
-            $("#CtblCustomer>tr").dblclick(function (){
+            $("#CtblCustomer>tr").dblclick(function () {
                 // alert("clicked");
                 $(this).remove()
 
@@ -1046,27 +1044,41 @@
 
     // add item events
 
-    $('#item-code').keydown(function (event){
-        if (event.key=="Enter"){
-            $("#item-name").focus();
+    $('#item-code').keydown(function (event) {
+        if (isMatchItemCode) {
+            $("#item-name").css("border", "2px solid red");
+            $("#itemNameError").text("wrong format : a-z or A-z ");
+            if (event.key == "Enter") {
+                $("#item-name").focus();
+            }
         }
     });
 
-    $("#item-name").keydown(function (event){
-        if (event.key=="Enter"){
-            $("#item-qty").focus();
+    $("#item-name").keydown(function (event) {
+        if (isMatchItemName) {
+            $("#item-qty").css("border", "2px solid red");
+            $("#itemQtyError").text("wrong format : 0-9 ");
+            if (event.key == "Enter") {
+                $("#item-qty").focus();
+            }
         }
     });
 
-    $("#item-qty").keydown(function (event){
-        if (event.key=="Enter"){
-            $("#item-pricee").focus();
+    $("#item-qty").keydown(function (event) {
+        if (isMatchItemQty) {
+            $("#item-pricee").css("border", "2px solid red");
+            $("#itemPriceError").text("wrong format : 100 or  100.00 ");
+            if (event.key == "Enter") {
+                $("#item-pricee").focus();
+            }
         }
     });
 
-    $("#item-pricee").keydown(function (event){
-        if (event.key=="Enter"){
-            $("#itemSaveButton").focus();
+    $("#item-pricee").keydown(function (event) {
+        if (isMatchItemPrice) {
+            if (event.key == "Enter") {
+                $("#itemSaveButton").focus();
+            }
         }
     });
 
@@ -1082,31 +1094,30 @@
 
     var regExCode = /^(P00-)[0-9]{3,5}$/;
 
-    $("#item-code").keyup(function (){
+    $("#item-code").keyup(function () {
         var code = $("#item-code").val();
-        if (regExCode.test(code)){
-            $("#item-code").css("border","2px solid green");
+        if (regExCode.test(code)) {
+            $("#item-code").css("border", "2px solid green");
             $("#itemCodeError").text("");
             isMatchItemCode = true;
-        }else {
-            $("#item-code").css("border","2px solid red");
+        } else {
+            $("#item-code").css("border", "2px solid red");
             $("#itemCodeError").text("wrong format : P00-001 ");
             isMatchItemCode = false;
         }
     });
 
 
-
     var regExItemName = /^[a-zA-Z]{3,10}$/
 
-    $("#item-name").keyup(function (){
+    $("#item-name").keyup(function () {
         var name = $("#item-name").val();
-        if (regExItemName.test(name)){
-            $("#item-name").css("border","2px solid green");
+        if (regExItemName.test(name)) {
+            $("#item-name").css("border", "2px solid green");
             $("#itemNameError").text("");
             isMatchItemName = true;
-        }else {
-            $("#item-name").css("border","2px solid red");
+        } else {
+            $("#item-name").css("border", "2px solid red");
             $("#itemNameError").text("wrong format : a-z or A-z ");
             isMatchItemName = false;
         }
@@ -1115,14 +1126,14 @@
 
     var regExItemQty = /^[0-9]{1,5}$/
 
-    $("#item-qty").keyup(function (){
+    $("#item-qty").keyup(function () {
         var qty = $("#item-qty").val();
-        if (regExItemQty.test(qty)){
-            $("#item-qty").css("border","2px solid green");
+        if (regExItemQty.test(qty)) {
+            $("#item-qty").css("border", "2px solid green");
             $("#itemQtyError").text("");
             isMatchItemQty = true;
-        }else {
-            $("#item-qty").css("border","2px solid red");
+        } else {
+            $("#item-qty").css("border", "2px solid red");
             $("#itemQtyError").text("wrong format : 0-9 ");
             isMatchItemQty = false;
         }
@@ -1131,14 +1142,14 @@
 
     var regExPrice = /^[0-9.]{2,10}$/;
 
-    $("#item-pricee").keyup(function (){
+    $("#item-pricee").keyup(function () {
         var price = $("#item-pricee").val();
-        if (regExPrice.test(price)){
-            $("#item-pricee").css("border","2px solid green");
+        if (regExPrice.test(price)) {
+            $("#item-pricee").css("border", "2px solid green");
             $("#itemPriceError").text("");
             isMatchItemPrice = true;
-        }else {
-            $("#item-pricee").css("border","2px solid red");
+        } else {
+            $("#item-pricee").css("border", "2px solid red");
             $("#itemPriceError").text("wrong format : 100 or  100.00 ");
             isMatchItemPrice = false;
         }
@@ -1146,11 +1157,11 @@
 
     $("#itemSaveButton").click(function () {
 
-        if (!isMatchItemCode){
-        }else if (!isMatchItemName){
-        }else if (!isMatchItemQty){
-        }else if (!isMatchItemPrice){
-        }else {
+        if (!isMatchItemCode) {
+        } else if (!isMatchItemName) {
+        } else if (!isMatchItemQty) {
+        } else if (!isMatchItemPrice) {
+        } else {
             $("#tblItem>tr").off("click");
 
             var itemTblCode = $('#item-code').val();
@@ -1159,8 +1170,8 @@
             var itemTblPrice = $('#item-pricee').val();
 
 
-            console.log(itemTblCode,itemTblName,itemTblQty,itemTblPrice);
-            console.log(typeof itemTblCode,typeof itemTblName,typeof itemTblQty,typeof itemTblPrice);
+            console.log(itemTblCode, itemTblName, itemTblQty, itemTblPrice);
+            console.log(typeof itemTblCode, typeof itemTblName, typeof itemTblQty, typeof itemTblPrice);
 
             var itemRow = `<tr><td>${itemTblCode}</td><td>${itemTblName}</td><td>${itemTblQty}</td><td>${itemTblPrice}</td></tr>`
 
@@ -1173,7 +1184,7 @@
                 var itemQty = $(this).children(':eq(2)').text();
                 var itemPrice = $(this).children(':eq(3)').text();
 
-                console.log(itemcode,itemName,itemQty,itemPrice);
+                console.log(itemcode, itemName, itemQty, itemPrice);
 
 
                 $('#IitemId').val(itemcode);
