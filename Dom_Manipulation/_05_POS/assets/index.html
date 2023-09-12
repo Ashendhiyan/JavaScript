@@ -1093,6 +1093,20 @@
     });
 
 
+
+    var regExItemName = /^[a-zA-Z]{3,10}$/
+
+    $("#item-name").keyup(function (){
+        var name = $("#item-name").val();
+        if (regExItemName.test(name)){
+            $("#item-name").css("border","2px solid green");
+            $("#itemNameError").text("");
+        }else {
+            $("#item-name").css("border","2px solid red");
+            $("#itemNameError").text("wrong format : a-z or A-z ");
+        }
+    });
+
     //========================================================================================================
     //========================================================================================================
 
