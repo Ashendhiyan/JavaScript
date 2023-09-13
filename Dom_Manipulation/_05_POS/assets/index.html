@@ -321,21 +321,21 @@
                     <div class="col-5 col-sm-5 col-lg">
                         <div class="mb-4">
                             <label class="form-label" for="CusId">Customer ID</label>
-                            <input class="form-control" disabled id="CusId" type="text">
+                            <input class="form-control"  id="CusId" type="text">
                         </div>
                     </div>
 
                     <div class="col-7 col-sm-7 col-lg">
                         <div class="mb-4">
                             <label class="form-label" for="CusName">Name</label>
-                            <input class="form-control" disabled id="CusName" type="text">
+                            <input class="form-control"  id="CusName" type="text">
                         </div>
                     </div>
 
                     <div class="col">
                         <div class="mb-4">
                             <label class="form-label" for="CusSalary">Salary(Rs)</label>
-                            <input class="form-control" disabled id="CusSalary" type="text">
+                            <input class="form-control"  id="CusSalary" type="text">
                         </div>
                     </div>
 
@@ -346,7 +346,7 @@
                     <div class="col">
                         <div class="mb-2">
                             <label class="form-label" for="CusAddress">Address</label>
-                            <input class="form-control" disabled id="CusAddress" type="text">
+                            <input class="form-control"  id="CusAddress" type="text">
                         </div>
                     </div>
                 </div>
@@ -356,7 +356,7 @@
                     <div class="gap-2 d-flex justify-content-center justify-content-md-end justify-content-sm-center  mt-4">
                         <button class="btn btn-secondary" type="button">Clear</button>
                         <button class="btn btn-danger" type="button">Delete</button>
-                        <button class="btn btn-primary" type="button">Update</button>
+                        <button class="btn btn-primary" type="button" id="CusUpdate">Update</button>
                     </div>
                 </div>
             </div>
@@ -975,6 +975,7 @@
     });
 
 
+    // $("#CbtnSaveCustomer").disable();
     $("#CbtnSaveCustomer").on("click", function () {
 
         //remove all the row events
@@ -988,6 +989,8 @@
         } else if (!isMatchCustomerAddress) {
         } else if (!isMatchCustomerSalary) {
         } else {
+
+            // $("#CbtnSaveCustomer").enable();
 
             var CusTableId = $("#txtCusId").val();
             var CusTableName = $("#txtCusName").val();
@@ -1037,6 +1040,24 @@
             });
         }
 
+    });
+
+
+
+    //=========update customer=============
+
+    $("#CusUpdate").click(function (){
+
+
+        var CusId = $("#txtCusId").val();
+        var cusName = $("#txtCusName").val();
+        var cusAddress = $("#txtCusAddress").val();
+        var cusSalary = $("#txtCusSalary").val();
+
+        let row = `<tr><td>${CusId}</td><td>${cusName}</td><td>${cusAddress}</td><td>${cusSalary}</td></tr>`;
+
+        $("CtblCustomer").append(row);
+        alert("Customer updated..!");
     });
 
 
