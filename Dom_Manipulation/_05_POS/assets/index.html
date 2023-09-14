@@ -908,6 +908,14 @@
     var isMatchCustomerAddress = false;
     var isMatchCustomerSalary = false;
 
+
+    $("#txtCusId,#txtCusName,#txtCusAddress,#txtCusSalary").keydown(function (eventOb){
+        if (eventOb.key=="Tab"){
+            eventOb.preventDefault();   // stop execution of the button
+        }
+    });
+
+
     // regular expression
 
 
@@ -1045,7 +1053,7 @@
 
 
     //=========update customer=============
-
+/*
     $("#CusUpdate").click(function (){
 
 
@@ -1058,7 +1066,7 @@
 
         $("CtblCustomer").append(row);
         alert("Customer updated..!");
-    });
+    });*/
 
 
     //==================================================================================================================================
@@ -1110,6 +1118,13 @@
     var isMatchItemName = false;
     var isMatchItemQty = false;
     var isMatchItemPrice = false;
+
+
+    $("#item-code,#item-name,#item-qty,#item-pricee").keydown(function (eventOb){
+        if (eventOb.key=="Tab"){
+            eventOb.preventDefault();
+        }
+    });
 
     // regular expression
 
