@@ -640,6 +640,71 @@ numbers.indexOf(100);
 
 
 
+
+
+    //================= Parameters in JS functions ========================
+
+
+    //---case 01
+    /*function saveCustomer(id,name){
+        console.log(id,name);
+    }
+
+    saveCustomer("C001","Ashen");*/
+
+
+
+    //---case 02
+
+   /* function saveCustomer(id,name){
+        console.log(id,name);
+    }
+
+    saveCustomer();     // no error
+*/
+
+
+    //---case 03
+
+    /*function saveCustomer(){
+        console.log("called");
+    }
+
+    saveCustomer("C001","Ashen");  */     // no error
+
+
+    //-------------------------------------------------------------------------------------------------
+
+    // why the above problem does not generate any problem?? (case 02 , case 03)
+
+   /* function saveCustomer(){
+        console.log(arguments);
+       // console.log(arguments[0],arguments[1]);
+    }
+
+    saveCustomer("C001","Ashen");   // no error*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </script>
 <script src="assets/js/script.js"></script>
 </body>
