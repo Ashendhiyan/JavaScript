@@ -983,6 +983,8 @@
     });
 
 
+     let row;
+
     // $("#CbtnSaveCustomer").disable();
     $("#CbtnSaveCustomer").on("click", function () {
 
@@ -1010,7 +1012,7 @@
             console.log(typeof CusTableId, typeof CusTableName, typeof CusTableAddress, typeof CusTableSalary);
 
             // create a html row
-            let row = `<tr><td>${CusTableId}</td><td>${CusTableName}</td><td>${CusTableAddress}</td><td>${CusTableSalary}</td></tr>`;
+            row = `<tr><td>${CusTableId}</td><td>${CusTableName}</td><td>${CusTableAddress}</td><td>${CusTableSalary}</td></tr>`;
 
             //select the table body and append the row
             $("#CtblCustomer").append(row);
@@ -1053,20 +1055,37 @@
 
 
     //=========update customer=============
-/*
     $("#CusUpdate").click(function (){
 
 
-        var CusId = $("#txtCusId").val();
-        var cusName = $("#txtCusName").val();
-        var cusAddress = $("#txtCusAddress").val();
-        var cusSalary = $("#txtCusSalary").val();
+        var CusId = $("#CusId").val();
+        var cusName = $("#CusName").val();
+        var cusAddress = $("#CusAddress").val();
+        var cusSalary = $("#CusSalary").val();
 
-        let row = `<tr><td>${CusId}</td><td>${cusName}</td><td>${cusAddress}</td><td>${cusSalary}</td></tr>`;
+        row = `<tr><td>${CusId}</td><td>${cusName}</td><td>${cusAddress}</td><td>${cusSalary}</td></tr>`;
 
-        $("CtblCustomer").append(row);
+        $("#CtblCustomer").append(row);
+        console.log(CusId,cusName,cusAddress,cusSalary);
         alert("Customer updated..!");
-    });*/
+
+
+        $("#CtblCustomer>tr").click(function (){
+
+
+            var customId = $(this).children(":nth-child(1)").text();
+            var customName = $(this).children(":nth-child(2)").text();
+            var customAddress = $(this).children(":nth-child(3)").text();
+            var customSalary = $(this).children(":nth-child(4)").text();
+
+            $("#CusId").val(customId);
+            $("#CusName").val(customName);
+            $("#CusAddress").val(customAddress);
+            $("#CusSalary").val(customSalary);
+
+        });
+
+    });
 
 
     //==================================================================================================================================
