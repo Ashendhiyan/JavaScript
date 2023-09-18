@@ -825,6 +825,7 @@
 
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="JQuery/jquery-3.6.1.min.js"></script>
+<script src="../db/DB.js"></script>
 
 <script>
 
@@ -989,7 +990,7 @@
     $("#CbtnSaveCustomer").on("click", function () {
 
         //remove all the row events
-        $("#CtblCustomer>tr").off();
+       // $("#CtblCustomer>tr").off();
 
 
         // gather customer information
@@ -1008,19 +1009,29 @@
             var CusTableSalary = $("#txtCusSalary").val();
 
 
+
+            var customerObject ={
+                id:CusTableId,
+                name:CusTableName,
+                address:CusTableAddress,
+                salary:CusTableSalary
+            };
+
+            customerDB.push(customerObject);
+/*
             console.log(CusTableId, CusTableName, CusTableAddress, CusTableSalary);
-            console.log(typeof CusTableId, typeof CusTableName, typeof CusTableAddress, typeof CusTableSalary);
+            console.log(typeof CusTableId, typeof CusTableName, typeof CusTableAddress, typeof CusTableSalary);*/
 
             // create a html row
-            row = `<tr><td>${CusTableId}</td><td>${CusTableName}</td><td>${CusTableAddress}</td><td>${CusTableSalary}</td></tr>`;
+           // row = `<tr><td>${CusTableId}</td><td>${CusTableName}</td><td>${CusTableAddress}</td><td>${CusTableSalary}</td></tr>`;
 
             //select the table body and append the row
-            $("#CtblCustomer").append(row);
-            alert("Customer saved..!");
+           /* $("#CtblCustomer").append(row);
+            alert("Customer saved..!");*/
 
 
             // bind the event after  the raw was aded
-            $("#CtblCustomer>tr").click(function () {
+         /*   $("#CtblCustomer>tr").click(function () {
 
                 //this       //dom object
                 //$(this)   //jQuery object
@@ -1039,15 +1050,15 @@
                 $("#CusAddress").val(customAddress);
                 $("#CusSalary").val(customSalary);
 
-            });
+            });*/
 
             // double click to remove customer
 
-            $("#CtblCustomer>tr").dblclick(function () {
+           /* $("#CtblCustomer>tr").dblclick(function () {
                 // alert("clicked");
                 $(this).remove()
 
-            });
+            });*/
         }
 
     });
