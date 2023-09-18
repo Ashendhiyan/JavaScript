@@ -1003,22 +1003,7 @@
 
             // $("#CbtnSaveCustomer").enable();
 
-            var CusTableId = $("#txtCusId").val();
-            var CusTableName = $("#txtCusName").val();
-            var CusTableAddress = $("#txtCusAddress").val();
-            var CusTableSalary = $("#txtCusSalary").val();
-
-
-
-            var customerObject ={
-                id:CusTableId,
-                name:CusTableName,
-                address:CusTableAddress,
-                salary:CusTableSalary
-            };
-
-            customerDB.push(customerObject);
-
+            saveCustomer();
             loadAllCustomers();
             removeData();
             searchCustomer();
@@ -1068,6 +1053,24 @@
     });
 
 
+
+    function saveCustomer(){
+        var CusTableId = $("#txtCusId").val();
+        var CusTableName = $("#txtCusName").val();
+        var CusTableAddress = $("#txtCusAddress").val();
+        var CusTableSalary = $("#txtCusSalary").val();
+
+
+
+        var customerObject ={
+            id:CusTableId,
+            name:CusTableName,
+            address:CusTableAddress,
+            salary:CusTableSalary
+        };
+
+        customerDB.push(customerObject);
+    };
 
 
     function loadAllCustomers(){
