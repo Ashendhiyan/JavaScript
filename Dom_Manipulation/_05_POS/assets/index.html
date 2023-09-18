@@ -1018,6 +1018,9 @@
             };
 
             customerDB.push(customerObject);
+
+            loadAllCustomers();
+            removeData();
 /*
             console.log(CusTableId, CusTableName, CusTableAddress, CusTableSalary);
             console.log(typeof CusTableId, typeof CusTableName, typeof CusTableAddress, typeof CusTableSalary);*/
@@ -1063,6 +1066,24 @@
 
     });
 
+
+
+
+    function loadAllCustomers(){
+        $("#CtblCustomer").empty();
+        for (var i=0;i<customerDB.length;i++) {
+                /*create html row*/
+            let row = `<tr><td>${customerDB[i].id}</td><td>${customerDB[i].name}</td><td>${customerDB[i].address}</td><td>${customerDB[i].salary}</td></tr>`;
+            $("#CtblCustomer").append(row);
+        }
+    };
+
+
+    function removeData(){
+      $("#CtblCustomer>tr").dblclick(function (){
+          $(this).remove();
+      });
+    };
 
 
     //=========update customer=============
