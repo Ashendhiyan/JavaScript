@@ -239,7 +239,7 @@
             <!--Search Bar with Button-->
             <div class="col-12 col-xl col-sm-9 col-md-6 col-lg">
                 <form class="d-flex mt-3 mt-sm-4 mt-lg-4">
-                    <input aria-label="Search" class="form-control me-2" id="CinputCusSearch"
+                    <input aria-label="Search"  class="form-control me-2" id="txtCusSearch"
                            placeholder="Search Customer" type="search">
                     <button class="btn btn-outline-primary" id="CbtnSearchButton" type="button">Search</button>
                 </form>
@@ -1021,6 +1021,7 @@
 
             loadAllCustomers();
             removeData();
+            searchCustomer();
 /*
             console.log(CusTableId, CusTableName, CusTableAddress, CusTableSalary);
             console.log(typeof CusTableId, typeof CusTableName, typeof CusTableAddress, typeof CusTableSalary);*/
@@ -1085,6 +1086,25 @@
       });
     };
 
+
+    function searchCustomer(){
+        $("#CbtnSearchButton").click(function (){
+            var value = $("#txtCusSearch").val();
+            for (var i=0;i<customerDB.length;i++){
+                if (value==customerDB[i].id){
+                    $("#CusId").val(customerDB[i].id);
+                    $("#CusName").val(customerDB[i].name);
+                    $("#CusAddress").val(customerDB[i].address);
+                    $("#CusSalary").val(customerDB[i].salary);
+
+
+                    alert("ok");
+                }else {
+                    alert(" Customer Not Found..!")
+                }
+            }
+        });
+    };
 
     //=========update customer=============
     $("#CusUpdate").click(function (){
