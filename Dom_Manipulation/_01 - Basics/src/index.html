@@ -720,18 +720,18 @@ numbers.indexOf(100);
 
     //-------------------Literal base objects------------------
 
-    var customer = {
+ /*   var customer = {
         id:"C001",
         name:"Ashen",
         address:"Hatton",
         salary:30000
     }
-
+*/
 
 
     //-------------------Function base objects------------------
 
-    function Customer(){
+   /* function Customer(){
         this.id="C002";
         this.name="Bawantha";
         this.address="Kandy";
@@ -742,6 +742,49 @@ numbers.indexOf(100);
 
     // this is the object
     var customer2 = new Customer();
+*/
+
+
+
+
+
+    //------------How to add methods inside the objects-------------
+
+
+    var customer = {
+        id:"C001",
+        name:"Ashen",
+        address:"Hatton",
+        age:{ age:23 , year:2001 },
+        salary:30000,
+        printMyName:function (){
+            console.log("My name is ",this.name);
+        }
+    }
+
+
+/*    customer.printMyName();
+    Output ----> My name is  Ashen  */
+
+
+    //-------------------------------------
+
+    function Customer(){
+        this.id="C002";
+        this.name="Bawantha";
+        this.address="Kandy";
+        this.salary=80000;
+        this.printId=function (){
+            console.log("My ID is ",this.id);
+        };
+    }
+
+    // this is the object
+    var customer2 = new Customer();
+
+
+ /*   customer2.printId();
+    Output ---->  My ID is  C002*/
 
 
 
