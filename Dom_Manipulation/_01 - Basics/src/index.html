@@ -708,10 +708,40 @@ numbers.indexOf(100);
 
 
 
+//      ==============Objects================
+
+
+    /*
+    * Literal base objects
+    * Function base objects
+    */
 
 
 
+    //-------------------Literal base objects------------------
 
+    var customer = {
+        id:"C001",
+        name:"Ashen",
+        address:"Hatton",
+        salary:30000
+    }
+
+
+
+    //-------------------Function base objects------------------
+
+    function Customer(){
+        this.id="C002";
+        this.name="Bawantha";
+        this.address="Kandy";
+        this.salary=80000
+    }
+
+    // Customer();  ---> function
+
+    // this is the object
+    var customer2 = new Customer();
 
 
 

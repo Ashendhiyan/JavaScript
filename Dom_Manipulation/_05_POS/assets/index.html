@@ -239,7 +239,7 @@
             <!--Search Bar with Button-->
             <div class="col-12 col-xl col-sm-9 col-md-6 col-lg">
                 <form class="d-flex mt-3 mt-sm-4 mt-lg-4">
-                    <input aria-label="Search"  class="form-control me-2" id="txtCusSearch"
+                    <input aria-label="Search" class="form-control me-2" id="txtCusSearch"
                            placeholder="Search Customer" type="search">
                     <button class="btn btn-outline-primary" id="CbtnSearchButton" type="button">Search</button>
                 </form>
@@ -321,21 +321,21 @@
                     <div class="col-5 col-sm-5 col-lg">
                         <div class="mb-4">
                             <label class="form-label" for="CusId">Customer ID</label>
-                            <input class="form-control"  id="CusId" type="text">
+                            <input class="form-control" id="CusId" type="text">
                         </div>
                     </div>
 
                     <div class="col-7 col-sm-7 col-lg">
                         <div class="mb-4">
                             <label class="form-label" for="CusName">Name</label>
-                            <input class="form-control"  id="CusName" type="text">
+                            <input class="form-control" id="CusName" type="text">
                         </div>
                     </div>
 
                     <div class="col">
                         <div class="mb-4">
                             <label class="form-label" for="CusSalary">Salary(Rs)</label>
-                            <input class="form-control"  id="CusSalary" type="text">
+                            <input class="form-control" id="CusSalary" type="text">
                         </div>
                     </div>
 
@@ -346,7 +346,7 @@
                     <div class="col">
                         <div class="mb-2">
                             <label class="form-label" for="CusAddress">Address</label>
-                            <input class="form-control"  id="CusAddress" type="text">
+                            <input class="form-control" id="CusAddress" type="text">
                         </div>
                     </div>
                 </div>
@@ -356,7 +356,7 @@
                     <div class="gap-2 d-flex justify-content-center justify-content-md-end justify-content-sm-center  mt-4">
                         <button class="btn btn-secondary" type="button">Clear</button>
                         <button class="btn btn-danger" type="button">Delete</button>
-                        <button class="btn btn-primary" type="button" id="CusUpdate">Update</button>
+                        <button class="btn btn-primary" id="CusUpdate" type="button">Update</button>
                     </div>
                 </div>
             </div>
@@ -910,8 +910,8 @@
     var isMatchCustomerSalary = false;
 
 
-    $("#txtCusId,#txtCusName,#txtCusAddress,#txtCusSalary").keydown(function (eventOb){
-        if (eventOb.key=="Tab"){
+    $("#txtCusId,#txtCusName,#txtCusAddress,#txtCusSalary").keydown(function (eventOb) {
+        if (eventOb.key == "Tab") {
             eventOb.preventDefault();   // stop execution of the button
         }
     });
@@ -984,13 +984,13 @@
     });
 
 
-     let row;
+    let row;
 
     // $("#CbtnSaveCustomer").disable();
     $("#CbtnSaveCustomer").on("click", function () {
 
         //remove all the row events
-       // $("#CtblCustomer>tr").off();
+        // $("#CtblCustomer>tr").off();
 
 
         // gather customer information
@@ -1002,136 +1002,96 @@
         } else {
 
             // $("#CbtnSaveCustomer").enable();
-
             saveCustomer();
+            updateCustomer();
             loadAllCustomers();
             removeData();
-            searchCustomer();
-/*
-            console.log(CusTableId, CusTableName, CusTableAddress, CusTableSalary);
-            console.log(typeof CusTableId, typeof CusTableName, typeof CusTableAddress, typeof CusTableSalary);*/
+            loadDataToTextFields();
+            clearAll();
 
-            // create a html row
-           // row = `<tr><td>${CusTableId}</td><td>${CusTableName}</td><td>${CusTableAddress}</td><td>${CusTableSalary}</td></tr>`;
-
-            //select the table body and append the row
-           /* $("#CtblCustomer").append(row);
-            alert("Customer saved..!");*/
-
-
-            // bind the event after  the raw was aded
-         /*   $("#CtblCustomer>tr").click(function () {
-
-                //this       //dom object
-                //$(this)   //jQuery object
-
-
-                let customId = $(this).children(':nth-child(1)').text();
-                let customName = $(this).children(':nth-child(2)').text();
-                let customAddress = $(this).children(':nth-child(3)').text();
-                let customSalary = $(this).children(':nth-child(4)').text();
-
-
-                console.log(customId, customName, customAddress, customSalary);
-
-                $("#CusId").val(customId);
-                $("#CusName").val(customName);
-                $("#CusAddress").val(customAddress);
-                $("#CusSalary").val(customSalary);
-
-            });*/
-
-            // double click to remove customer
-
-           /* $("#CtblCustomer>tr").dblclick(function () {
-                // alert("clicked");
-                $(this).remove()
-
-            });*/
         }
 
     });
 
 
+    function saveCustomer() {
 
-    function saveCustomer(){
+
+        //remove all the row events
+        $("#CtblCustomer>tr").off();
+
         var CusTableId = $("#txtCusId").val();
         var CusTableName = $("#txtCusName").val();
         var CusTableAddress = $("#txtCusAddress").val();
         var CusTableSalary = $("#txtCusSalary").val();
 
 
-
-        var customerObject ={
-            id:CusTableId,
-            name:CusTableName,
-            address:CusTableAddress,
-            salary:CusTableSalary
+        var customerObject = {
+            id: CusTableId,
+            name: CusTableName,
+            address: CusTableAddress,
+            salary: CusTableSalary
         };
 
         customerDB.push(customerObject);
-    };
+        alert("Customer was added..!");
 
+    }
 
-    function loadAllCustomers(){
+    function loadAllCustomers() {
         $("#CtblCustomer").empty();
-        for (var i=0;i<customerDB.length;i++) {
-                /*create html row*/
+        for (var i = 0; i < customerDB.length; i++) {
+            /*create html row*/
             let row = `<tr><td>${customerDB[i].id}</td><td>${customerDB[i].name}</td><td>${customerDB[i].address}</td><td>${customerDB[i].salary}</td></tr>`;
             $("#CtblCustomer").append(row);
         }
-    };
+    }
 
+    function removeData() {
+        $("#CtblCustomer>tr").dblclick(function () {
+            $(this).remove();
+        });
+    }
 
-    function removeData(){
-      $("#CtblCustomer>tr").dblclick(function (){
-          $(this).remove();
-      });
-    };
+    //search customer
+    $("#CbtnSearchButton").click(function (){
+        var value = $("#txtCusSearch").val();
+        var responce = searchCustomer(value);
+        if (responce){
+            $("#CusId").val(responce.id);
+            $("#CusName").val(responce.name);
+            $("#CusAddress").val(responce.address);
+            $("#CusSalary").val(responce.salary);
+        }else {
+            clearAll();
+            alert(" Customer Not Found..!")
+        }
 
+    });
 
-    function searchCustomer(){
-        $("#CbtnSearchButton").click(function (){
-            var value = $("#txtCusSearch").val();
-            for (var i=0;i<customerDB.length;i++){
-                if (value==customerDB[i].id){
-                    $("#CusId").val(customerDB[i].id);
-                    $("#CusName").val(customerDB[i].name);
-                    $("#CusAddress").val(customerDB[i].address);
-                    $("#CusSalary").val(customerDB[i].salary);
-
-
-                    alert("ok");
-                }else {
-                    alert(" Customer Not Found..!")
+    function searchCustomer(id) {
+            for (var i = 0; i < customerDB.length; i++) {
+                if (id == customerDB[i].id) {
+                   return customerDB[i];
                 }
             }
-        });
     };
 
-    //=========update customer=============
-    $("#CusUpdate").click(function (){
+    function loadDataToTextFields() {
+
+        $("#CtblCustomer>tr").click(function () {
+
+            //this       //dom object
+            //$(this)   //jQuery object
 
 
-        var CusId = $("#CusId").val();
-        var cusName = $("#CusName").val();
-        var cusAddress = $("#CusAddress").val();
-        var cusSalary = $("#CusSalary").val();
-
-        row = `<tr><td>${CusId}</td><td>${cusName}</td><td>${cusAddress}</td><td>${cusSalary}</td></tr>`;
-
-        $("#CtblCustomer").append(row);
-        console.log(CusId,cusName,cusAddress,cusSalary);
-        alert("Customer updated..!");
+            let customId = $(this).children(':nth-child(1)').text();
+            let customName = $(this).children(':nth-child(2)').text();
+            let customAddress = $(this).children(':nth-child(3)').text();
+            let customSalary = $(this).children(':nth-child(4)').text();
 
 
-        $("#CtblCustomer>tr").click(function (){
-
-
-            var customId = $(this).children(":nth-child(1)").text();
-            var customName = $(this).children(":nth-child(2)").text();
-            var customAddress = $(this).children(":nth-child(3)").text();
-            var customSalary = $(this).children(":nth-child(4)").text();
+            console.log(customId, customName, customAddress, customSalary);
 
             $("#CusId").val(customId);
             $("#CusName").val(customName);
@@ -1139,9 +1099,36 @@
             $("#CusSalary").val(customSalary);
 
         });
+    }
 
-    });
+    //=========update customer=============
+    function updateCustomer() {
+        $("#CusUpdate").click(function () {
 
+
+            var CusId = $("#CusId").val();
+            var cusName = $("#CusName").val();
+            var cusAddress = $("#CusAddress").val();
+            var cusSalary = $("#CusSalary").val();
+
+
+            var customerObject = {
+                id: CusId,
+                name: cusName,
+                address: cusAddress,
+                salary: cusSalary
+            };
+            $("#CtblCustomer").push(customerObject);
+            alert("Customer updated..!");
+        });
+    }
+
+    function clearAll(){
+      $("#txtCusId,#txtCusName,#txtCusAddress,#txtCusSalary,#txtCusSearch").val("");
+      $("#txtCusId").focus();
+      $("#CusId,#CusName,#CusAddress,#CusSalary").val("");
+
+    };
 
     //==================================================================================================================================
 
@@ -1194,8 +1181,8 @@
     var isMatchItemPrice = false;
 
 
-    $("#item-code,#item-name,#item-qty,#item-pricee").keydown(function (eventOb){
-        if (eventOb.key=="Tab"){
+    $("#item-code,#item-name,#item-qty,#item-pricee").keydown(function (eventOb) {
+        if (eventOb.key == "Tab") {
             eventOb.preventDefault();
         }
     });
