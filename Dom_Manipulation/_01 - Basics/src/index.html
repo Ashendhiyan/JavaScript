@@ -8,7 +8,7 @@
 <h1>Hello jS</h1>
 
 <script>
-    <!--   we can write script here     -->
+    /*<!--   we can write script here     -->*/
     // document.getElementsByTagName()
 
     /*print a output*/
@@ -751,6 +751,7 @@ numbers.indexOf(100);
     //------------How to add methods inside the objects-------------
 
 
+/*
     var customer = {
         id:"C001",
         name:"Ashen",
@@ -761,6 +762,7 @@ numbers.indexOf(100);
             console.log("My name is ",this.name);
         }
     }
+*/
 
 
 /*    customer.printMyName();
@@ -769,7 +771,7 @@ numbers.indexOf(100);
 
     //-------------------------------------
 
-    function Customer(){
+/*    function Customer(){
         this.id="C002";
         this.name="Bawantha";
         this.address="Kandy";
@@ -780,7 +782,7 @@ numbers.indexOf(100);
     }
 
     // this is the object
-    var customer2 = new Customer();
+    var customer2 = new Customer();*/
 
 
  /*   customer2.printId();
@@ -788,6 +790,34 @@ numbers.indexOf(100);
 
 
 
+
+
+
+    //---------------------- can add dynamic properties to object------------------------
+
+    var customer={
+        id:"C001"
+    }
+
+    customer    //  {id: 'C001'}
+    customer.id //  'C001'
+    customer.name="Ashen";  //   'Ashen'
+    customer    //  {id: 'C001', name: 'Ashen'}
+
+
+    //function base
+
+
+    function Customer(){
+        this.id="C002";
+    }
+
+    var customer2 = new Customer();
+
+    customer2   // Customer{id: 'C002'}
+    customer2.id    //  'C002'
+    customer2.age=23;   //  23
+    customer2   //  Customer{id: 'C002', age: 23}
 
 
 </script>
