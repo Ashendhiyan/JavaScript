@@ -258,20 +258,20 @@
     /* What is an object? */
     /* named value container */
 
-  /*  let id = "C001";
-    let name = "Dasun";
-    let address = "Kandy";
-    let salary = 100000.00;*/
+    /*  let id = "C001";
+      let name = "Dasun";
+      let address = "Kandy";
+      let salary = 100000.00;*/
 
 
     // js literal base Object
 
-  /*  var customer = {
-        id: "C001",     //properties (key , value)
-        name: "Dasun",
-        address: "Kandy",
-        salary: 10000.00
-    }*/
+    /*  var customer = {
+          id: "C001",     //properties (key , value)
+          name: "Dasun",
+          address: "Kandy",
+          salary: 10000.00
+      }*/
 
 
 
@@ -284,28 +284,24 @@
 
     // ===========================================================================================================
 
-        // Function...?
+    // Function...?
 
-  /*  in a class
-   public void savecustomer(){
+    /*  in a class
+     public void savecustomer(){
 
-    }*/
+      }*/
 
 
 
-        // In JS
+    // In JS
     // how to define a function
-   /* function savecustomer(){
-        console.log("Hello..");
-    }
-*/
+    /* function savecustomer(){
+         console.log("Hello..");
+     }
+ */
 
     // how to call a function
     // savecustomer();
-
-
-
-
 
 
     //---------Hoisting---------
@@ -319,21 +315,16 @@
     callTheMethod();    // call first
 
     //then declare
-    function callTheMethod(){
+    function callTheMethod() {
         console.log('Hello There...');
     }
-
-
 
 
     //variable Hoisting (only work with var)
     console.log(myName);    // we can use the variable which was declared later
 
 
-
     var myName; // declare later
-
-
 
 
     // ===========================================================================================================
@@ -348,20 +339,19 @@
     // }
 
 
-
     // ===========================================================================================================
 
     // regular expressions
 
 
-        // let regEx =/^[0-9]{3}$/;
-        // typeof regEx    // object
-        //
-        //
-        // so how to check
-        //
-        // let testingString = "abc";
-        // regEx.test(testingString);  //return true of false
+    // let regEx =/^[0-9]{3}$/;
+    // typeof regEx    // object
+    //
+    //
+    // so how to check
+    //
+    // let testingString = "abc";
+    // regEx.test(testingString);  //return true of false
 
 
     //=============================================================================================================
@@ -378,14 +368,13 @@
 
     //Literal base Array
     var myArray = [];   // this is array . but type of this an object
-    var myNames = ["Ashen","Bawantha","Chaluka","Isuru"];   //we can store values in a array like tthis
+    var myNames = ["Ashen", "Bawantha", "Chaluka", "Isuru"];   //we can store values in a array like tthis
     myNames[0];     // access values
-
 
 
     //Function base Array
     //we can use array function to create a array also
-    var ages = new Array(5,10,50,65,25);
+    var ages = [5, 10, 50, 65, 25];
     ages[0];    //access values - 5
 
 
@@ -497,10 +486,9 @@ numbers.indexOf(100);
     //----------------------------for loop--------------------------------
 
 
+    /* for (int i =0;i<10;i++){           // (in java)
 
-   /* for (int i =0;i<10;i++){           // (in java)
-
-    }*/
+     }*/
 
 
 
@@ -512,31 +500,31 @@ numbers.indexOf(100);
 
 
 
-/*    var numbers = [10,20,30,40,50];
-    for(var i =0;i<numbers.length;i++){
-        console.log(numbers[i]);
-    }*/
+    /*    var numbers = [10,20,30,40,50];
+        for(var i =0;i<numbers.length;i++){
+            console.log(numbers[i]);
+        }*/
 
 
 
     //----------------------------while loop------------------------------
 
-  /*  var i= 0;
-    while (i<10){
-        console.log(i);
-        i++;
-    }*/
+    /*  var i= 0;
+      while (i<10){
+          console.log(i);
+          i++;
+      }*/
 
 
 
 
     //---------------------------do while loop-------------------------------
 
-   /* var i=0;
-    do{
-        console.log(i);
-        i++;
-    }while(i<10);*/
+    /* var i=0;
+     do{
+         console.log(i);
+         i++;
+     }while(i<10);*/
 
 
 
@@ -558,18 +546,18 @@ numbers.indexOf(100);
     //-----------------------------for of----------------------------------
 
 
-/*
-    var names=["Ashhen","Bawantha","chaluka","buddika"];
-    for(var i of names){
-        console.log(i);
-    }
+    /*
+        var names=["Ashhen","Bawantha","chaluka","buddika"];
+        for(var i of names){
+            console.log(i);
+        }
 
-     Ashhen
-     Bawantha
-     chaluka
-     buddika
+         Ashhen
+         Bawantha
+         chaluka
+         buddika
 
-    */
+        */
 
 
 
@@ -586,26 +574,26 @@ numbers.indexOf(100);
 
     //-----------------------------find method----------------------------
 
-   /* var names=["Ashhen","Bawantha","chaluka","buddika"];
-    names.find(function(e){
-        return e=="chaluka";
-    });*/
+    /* var names=["Ashhen","Bawantha","chaluka","buddika"];
+     names.find(function(e){
+         return e=="chaluka";
+     });*/
 
 
 
     //-----------------------------filter method----------------------------
 
-  /*  let MyAges=[10,20,30,40,50];
+    /*  let MyAges=[10,20,30,40,50];
 
-    MyAges.filter(function(e){
-        if(e>20){
-            return e;       //return value to a array if only the condition is true
-        }
-    });
+      MyAges.filter(function(e){
+          if(e>20){
+              return e;       //return value to a array if only the condition is true
+          }
+      });
 
-    [30, 40, 50]
+      [30, 40, 50]
 
-    */
+      */
 
 
 
@@ -621,22 +609,22 @@ numbers.indexOf(100);
 
 
     //--------------Declaration--------------
-   /* function saveCustomer(){
-        console.log("Customer saved..!")
-    }
+    /* function saveCustomer(){
+         console.log("Customer saved..!")
+     }
 
-    saveCustomer();*/
+     saveCustomer();*/
 
 
 
     //--------------Expression  (JS has first class functions) --------------
 
- /*   let marriedState = function(){
-        return false;
-    }
+    /*   let marriedState = function(){
+           return false;
+       }
 
-    let output = marriedState();
-    console.log(output);*/
+       let output = marriedState();
+       console.log(output);*/
 
 
 
@@ -656,12 +644,12 @@ numbers.indexOf(100);
 
     //---case 02
 
-   /* function saveCustomer(id,name){
-        console.log(id,name);
-    }
+    /* function saveCustomer(id,name){
+         console.log(id,name);
+     }
 
-    saveCustomer();     // no error
-*/
+     saveCustomer();     // no error
+ */
 
 
     //---case 03
@@ -677,38 +665,38 @@ numbers.indexOf(100);
 
     // why the above problem does not generate any problem?? (case 02 , case 03)
 
-   /* function saveCustomer(){
-        console.log(arguments);
-       // console.log(arguments[0],arguments[1]);
-    }
+    /* function saveCustomer(){
+         console.log(arguments);
+        // console.log(arguments[0],arguments[1]);
+     }
 
-    saveCustomer("C001","Ashen");   // no error*/
+     saveCustomer("C001","Ashen");   // no error*/
 
 
 
     //================= what about method overloading =====================
 
 
-/*
-    function saveCustomer(id,name,address){
-        console.log("id : name : address",id,name,address);
-    }
+    /*
+        function saveCustomer(id,name,address){
+            console.log("id : name : address",id,name,address);
+        }
 
 
-    function saveCustomer(id,name){
-        console.log("id : name",id,name);
-    }
+        function saveCustomer(id,name){
+            console.log("id : name",id,name);
+        }
 
 
-    saveCustomer("C001","Ashen","Kandy");   // overloading not working
-    // always call the last method
-*/
+        saveCustomer("C001","Ashen","Kandy");   // overloading not working
+        // always call the last method
+    */
 
 
 
 
 
-//      ==============Objects================
+    //      ==============Objects================
 
 
     /*
@@ -720,29 +708,29 @@ numbers.indexOf(100);
 
     //-------------------Literal base objects------------------
 
- /*   var customer = {
-        id:"C001",
-        name:"Ashen",
-        address:"Hatton",
-        salary:30000
-    }
-*/
+    /*   var customer = {
+           id:"C001",
+           name:"Ashen",
+           address:"Hatton",
+           salary:30000
+       }
+   */
 
 
     //-------------------Function base objects------------------
 
-   /* function Customer(){
-        this.id="C002";
-        this.name="Bawantha";
-        this.address="Kandy";
-        this.salary=80000
-    }
+    /* function Customer(){
+         this.id="C002";
+         this.name="Bawantha";
+         this.address="Kandy";
+         this.salary=80000
+     }
 
-    // Customer();  ---> function
+     // Customer();  ---> function
 
-    // this is the object
-    var customer2 = new Customer();
-*/
+     // this is the object
+     var customer2 = new Customer();
+ */
 
 
 
@@ -751,42 +739,42 @@ numbers.indexOf(100);
     //------------How to add methods inside the objects-------------
 
 
-/*
-    var customer = {
-        id:"C001",
-        name:"Ashen",
-        address:"Hatton",
-        age:{ age:23 , year:2001 },
-        salary:30000,
-        printMyName:function (){
-            console.log("My name is ",this.name);
+    /*
+        var customer = {
+            id:"C001",
+            name:"Ashen",
+            address:"Hatton",
+            age:{ age:23 , year:2001 },
+            salary:30000,
+            printMyName:function (){
+                console.log("My name is ",this.name);
+            }
         }
-    }
-*/
+    */
 
 
-/*    customer.printMyName();
-    Output ----> My name is  Ashen  */
+    /*    customer.printMyName();
+        Output ----> My name is  Ashen  */
 
 
     //-------------------------------------
 
-/*    function Customer(){
-        this.id="C002";
-        this.name="Bawantha";
-        this.address="Kandy";
-        this.salary=80000;
-        this.printId=function (){
-            console.log("My ID is ",this.id);
-        };
-    }
+    /*    function Customer(){
+            this.id="C002";
+            this.name="Bawantha";
+            this.address="Kandy";
+            this.salary=80000;
+            this.printId=function (){
+                console.log("My ID is ",this.id);
+            };
+        }
 
-    // this is the object
-    var customer2 = new Customer();*/
+        // this is the object
+        var customer2 = new Customer();*/
 
 
- /*   customer2.printId();
-    Output ---->  My ID is  C002*/
+    /*   customer2.printId();
+       Output ---->  My ID is  C002*/
 
 
 
@@ -795,29 +783,69 @@ numbers.indexOf(100);
 
     //---------------------- can add dynamic properties to object------------------------
 
-    var customer={
-        id:"C001"
-    }
+    /*  var customer={
+          id:"C001"
+      }
 
-    customer    //  {id: 'C001'}
-    customer.id //  'C001'
-    customer.name="Ashen";  //   'Ashen'
-    customer    //  {id: 'C001', name: 'Ashen'}
+      customer    //  {id: 'C001'}
+      customer.id //  'C001'
+      customer.name="Ashen";  //   'Ashen'
+      customer    //  {id: 'C001', name: 'Ashen'}*/
 
 
     //function base
 
 
-    function Customer(){
-        this.id="C002";
+    /*
+        function Customer(){
+            this.id="C002";
+        }
+
+        var customer2 = new Customer();
+
+        customer2   // Customer{id: 'C002'}
+        customer2.id    //  'C002'
+        customer2.age=23;   //  23
+        customer2   //  Customer{id: 'C002', age: 23}
+    */
+
+
+
+    //---------------------- can add dynamic methods to object------------------------
+
+
+    var customer = {
+        id: "C001",
+        name: "Ashen"
     }
 
-    var customer2 = new Customer();
+    customer    //  {id: 'C001', name: 'Ashen'}
+    customer.printMyname = function () {
+        console.log("My name is ", this.name);
+    }
 
-    customer2   // Customer{id: 'C002'}
-    customer2.id    //  'C002'
-    customer2.age=23;   //  23
-    customer2   //  Customer{id: 'C002', age: 23}
+    customer.printMyname(); //   My name is  Ashen
+
+
+    //function base
+
+
+    function Customer() {
+        this.id = "C002";
+        this.age = 23;
+        this.address = "kandy";
+
+    }
+
+    var customer2= new Customer();
+
+
+    customer2   //  Customer{id: 'C002', age: 23, address: 'kandy'}
+    customer2.printAge=function(){
+        console.log("My age is ",this.age);
+    }
+
+    customer2.printAge();   //  My age is  23
 
 
 </script>
