@@ -912,8 +912,8 @@ numbers.indexOf(100);
 
     /*
     * value
-    * enumerable
-    * configurable
+    * enumerable    =   remove object key from countable state   //  Object.keys();
+    * configurable  =   stop delete property
     * writable  =   stop changing value */
 
 
@@ -925,19 +925,88 @@ numbers.indexOf(100);
     }
 
 
+    //-------------writable---------------
+
+
     Object.getOwnPropertyDescriptor(customer,"id");
     //{value: 'C001', writable: true, enumerable: true, configurable: true}
 
 
     //let's change writable property to false
     Object.defineProperty(customer,"id",{
-        writable: false
+        writable: false //  id value cannot change
     });
 
     customer.id="C003"  //  'C003'  -----> no changes happen
     customer    //  {id: 'C002'}
     Object.getOwnPropertyDescriptor(customer,"id");
     // {value: 'C002', writable: false, enumerable: true, configurable: true}
+
+
+
+
+    //--------------enumerable--------------
+
+
+    Object.defineProperty(customer,"id",{
+        enumerable:false    // remove object key from countable state   //  Object.keys();
+    });
+
+    Object.keys(customer);  //  []
+
+
+    //can we delete ---------> yes
+    //count ---------> no
+    //value change  ---------> no
+
+
+
+
+
+
+
+    //---------------configurable-----------------------
+
+
+
+    Object.defineProperty(customer,"id",{
+        configurable:false
+    });
+
+    delete customer.id   //   false
+
+
+
+    //==================== special behaviours in configurable ==========================
+
+
+    // can we turn on configurable again after false?    // No
+
+
+  /*  Object.defineProperty(customer,"id",{
+       configurable:true    //  no
+    });*/
+
+
+    //can we change other property descriptors..?
+
+    //writable..??
+    // we can do it if it is true
+    Object.defineProperty(customer,"id",{
+        writable: false    //   can change true to false one time
+    })
+
+
+    // this is error
+    Object.defineProperty(customer,"id",{
+        writable: true    //   no..no allowed--> because configurable is false
+    })
+
+
+
+    /*  After applying false to configurable you cannot change anything of the property */
+
+
 
 
 </script>
