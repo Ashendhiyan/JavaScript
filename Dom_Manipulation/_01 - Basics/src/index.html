@@ -879,6 +879,67 @@ numbers.indexOf(100);
 
 
 
+    //========================== what about Encapsulation ====================================
+
+/*
+    var customer={
+        id:"C001"   // property
+    }
+
+    customer.name="Ashen";  //add new property
+    delete customer.name;   //remove property
+    customer.id="C002";     //can change value
+    Object.keys(customer);      //can count key
+*/
+
+
+    //========================== what about objects using functions ====================================
+
+
+    /*function Item(code){
+        this.code=code;
+    }
+
+    var item=new Item("P-001");
+    item.code="P-002";  // can change value
+    item.name="Lux";    //add new property
+    delete item.name;   //remove property name
+    Object.keys(item);  //can count keys*/
+
+
+
+    //========================== Property Descriptors ====================================
+
+    /*
+    * value
+    * enumerable
+    * configurable
+    * writable  =   stop changing value */
+
+
+    // every property we have property descriptors
+    //how to view them?
+
+    var customer={
+        id:"C001"
+    }
+
+
+    Object.getOwnPropertyDescriptor(customer,"id");
+    //{value: 'C001', writable: true, enumerable: true, configurable: true}
+
+
+    //let's change writable property to false
+    Object.defineProperty(customer,"id",{
+        writable: false
+    });
+
+    customer.id="C003"  //  'C003'  -----> no changes happen
+    customer    //  {id: 'C002'}
+    Object.getOwnPropertyDescriptor(customer,"id");
+    // {value: 'C002', writable: false, enumerable: true, configurable: true}
+
+
 </script>
 <script src="assets/js/script.js"></script>
 </body>
