@@ -920,13 +920,14 @@ numbers.indexOf(100);
     // every property we have property descriptors
     //how to view them?
 
-    var customer={
+  /*  var customer={
         id:"C001"
     }
-
+*/
 
     //-------------writable---------------
 
+/*
 
     Object.getOwnPropertyDescriptor(customer,"id");
     //{value: 'C001', writable: true, enumerable: true, configurable: true}
@@ -942,11 +943,14 @@ numbers.indexOf(100);
     Object.getOwnPropertyDescriptor(customer,"id");
     // {value: 'C002', writable: false, enumerable: true, configurable: true}
 
+*/
+
 
 
 
     //--------------enumerable--------------
 
+/*
 
     Object.defineProperty(customer,"id",{
         enumerable:false    // remove object key from countable state   //  Object.keys();
@@ -960,6 +964,7 @@ numbers.indexOf(100);
     //value change  ---------> no
 
 
+*/
 
 
 
@@ -969,12 +974,12 @@ numbers.indexOf(100);
 
 
 
-    Object.defineProperty(customer,"id",{
+  /*  Object.defineProperty(customer,"id",{
         configurable:false
     });
 
     delete customer.id   //   false
-
+*/
 
 
     //==================== special behaviours in configurable ==========================
@@ -992,15 +997,15 @@ numbers.indexOf(100);
 
     //writable..??
     // we can do it if it is true
-    Object.defineProperty(customer,"id",{
+   /* Object.defineProperty(customer,"id",{
         writable: false    //   can change true to false one time
-    })
+    })*/
 
 
     // this is error
-    Object.defineProperty(customer,"id",{
+  /*  Object.defineProperty(customer,"id",{
         writable: true    //   no..no allowed--> because configurable is false
-    })
+    })*/
 
 
 
@@ -1018,11 +1023,11 @@ numbers.indexOf(100);
 
     // Data property
 
-    var customer={
+   /* var customer={
         id:"C001",      // data property
         name:"Kasun"
     }
-
+*/
     /*value="C001
     * enumerable
     * configurable
@@ -1030,11 +1035,11 @@ numbers.indexOf(100);
     */
 
 
-    function Item(){
+/*    function Item(){
         this.code="P-001"   // data property
     }
 
-    var item = new Item();
+    var item = new Item();*/
 
 
 
@@ -1052,7 +1057,7 @@ numbers.indexOf(100);
     * get
     * set */
 
-    var color={
+ /*   var color={
         //id: // we cannot create properties without values. if  we want to do that we have to use the following way
     }
 
@@ -1094,6 +1099,141 @@ numbers.indexOf(100);
     //missing property descriptors in accessor properties
     // writable = because there is no direct value we dont need writable
     //value =   no direct value
+*/
+
+
+
+
+
+
+
+
+
+
+   //==============================     encapsulate     ========================
+
+
+/*
+    var customer={
+        id:"C001",  // we cannot be able to access them directly(private),  // we can set enumerable :false //but it's not complete solution
+        name:"Ashen",
+        address:"Kandy",
+        salary:5000.00,
+        getCustomerID:function (){
+            return this.id;
+        },
+        setCustomerID:function (id){
+            this.id=id;
+        }
+    }
+*/
+
+
+
+
+
+    //what option..?
+
+/*    function Customer(id,name,address,salary){
+        this.id=id;
+        this.name=name;
+        this.address=address;
+        this.salary=salary;
+        this.getCustomerID=function (){
+            return this.id;
+        };
+        this.SetCustomerID=function (id){
+            this.id=id;
+        }
+    }*/
+
+
+
+
+    //Variable scope
+
+    /*var a = 10; //global
+
+    function Hello(){
+        var name ="Ashen";  //  local   -   function scopoe
+        console.log(a);
+    }
+
+    console.log(name);  // cannot access
+
+
+
+
+    //case 02
+
+    {
+        var b = 20;
+    }
+    console.log(b); //  20  // this is ok
+*/
+
+
+
+
+
+    //-----------------Make encapsulated objects using JS--------------------
+
+    function Customer(id,name,address,salary){
+        var id=id;
+        var name = name;
+        var address=address;
+        var salary=salary;
+    }
+
+    var cus = new Customer("C001","Ashen","Hatton",50000.00);
+
+    cus //  Customer{}[[Prototype]]: Object
+
+
+    //-------------------------------------------------------------------------------------------
+
+    function Customer(id,name,address,salary){
+        var __id=id;    //  (__) this is convention -----> absolutely private
+        var __name = name;  // there are not visible to the Customer objects
+        var __address=address;
+        var __salary=salary;
+
+        this.getCustomerID=function(){  // if you use this keyword for methods or properties you can use them in Objects
+            return __id;
+        };
+        this.SetCustomerID=function (val) {
+            __id=val;
+        }
+    }
+
+    var cus = new Customer("C001","Ashen","Hatton",50000.00);
+
+    cus.id; // cannot access
+    cus.getCustomerID();   //ok     //  'C001'
+    cus.SetCustomerID("C002");
+    cus.getCustomerID();    //ok      //  'C002'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </script>
