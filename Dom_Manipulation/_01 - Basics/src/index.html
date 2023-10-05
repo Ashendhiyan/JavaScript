@@ -1178,7 +1178,7 @@ numbers.indexOf(100);
 
     //-----------------Make encapsulated objects using JS--------------------
 
-    function Customer(id,name,address,salary){
+   /* function Customer(id,name,address,salary){
         var id=id;
         var name = name;
         var address=address;
@@ -1187,12 +1187,12 @@ numbers.indexOf(100);
 
     var cus = new Customer("C001","Ashen","Hatton",50000.00);
 
-    cus //  Customer{}[[Prototype]]: Object
+    cus //  Customer{}[[Prototype]]: Object*/
 
 
     //-------------------------------------------------------------------------------------------
 
-    function Customer(id,name,address,salary){
+ /*   function Customer(id,name,address,salary){
         var __id=id;    //  (__) this is convention -----> absolutely private
         var __name = name;  // there are not visible to the Customer objects
         var __address=address;
@@ -1213,9 +1213,31 @@ numbers.indexOf(100);
     cus.SetCustomerID("C002");
     cus.getCustomerID();    //ok      //  'C002'
 
+*/
 
 
 
+
+    //==============    Prototype base Inheritance      =================
+
+    var customer={
+        id:"C001"
+    }
+
+    customer.id;    //  'C001'
+    Object.prototype    // we can access the property of the Object
+    // {constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}
+
+    Object.prototype.age=50;    // we can add new property to prototype
+
+    //Now when  created objects can use the age property
+    customer.age;   //  50
+
+    var  m={
+
+    }
+
+    m.age;  //  50
 
 
 
